@@ -27,11 +27,22 @@
       <field name="name">dhruv form</field>
       <field name="model">dhruv.dhruv</field>
       <field name="arch" type="xml">
-        <form string="form">
-          <field name="name" string="Name"  required="1" placeholder="name"/>
-          <field name="dhruv" string="value"/>
-          <field name="selection" widget="radio"/>
-          <field name="abin"/>
+        <form>
+          <group>
+            <group>
+              <field name="name" required="1" placeholder="value"/>
+              <field name="dhruv"/>
+              <field name="selection" widget="radio"/>
+            </group>
+
+            <group>
+               <field name="abin"/>
+              <field name="email"/>
+            </group>
+
+          </group>
+
+
         </form>
       </field>
     </record>

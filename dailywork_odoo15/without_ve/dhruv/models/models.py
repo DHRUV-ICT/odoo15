@@ -7,8 +7,8 @@ class dhruv(models.Model):
     _name = 'dhruv.dhruv'
     _description = 'dhruv.dhruv'
 
-    name = fields.Char()
-    value = fields.Integer()
+    name = fields.Char(string="name")
+    value = fields.Integer(string="amount")
     value2 = fields.Float(compute="_value_pc", store=True)
     description = fields.Text()
     dhruv = fields.Integer()
@@ -22,3 +22,5 @@ class dhruv(models.Model):
     def _value_pc(self):
         for record in self:
             record.value2 = float(record.value) / 100
+
+
