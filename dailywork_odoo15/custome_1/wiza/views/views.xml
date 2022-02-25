@@ -1,0 +1,112 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="wiza_list">
+      <field name="name">wiza list</field>
+      <field name="model">wiza.wiza</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+          <field name="email"/>
+          <field name="selection"/>
+          <field name="abin" widget="image"/>
+          <field name="date"/>
+
+
+
+
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="wiza_form">
+      <field name="name">wiza list</field>
+      <field name="model">wiza.wiza</field>
+      <field name="arch" type="xml">
+        <form>
+
+          <sheat>
+            <div class="oe_button_box" name="button_box" position="right">
+              <button class="oe_stat_button" name="%(dhruv.action_window)d"
+                      type="action" icon="fa-pencil-square-o">
+                <div class="smart_button">
+                  <span class="o_stat_value">smart</span>
+                </div>
+              </button>
+            </div>
+
+            <group>
+
+                <field name="name"/>
+                <field name="value"/>
+                <field name="value2"/>
+
+            </group>
+          </sheat>
+          <group>
+
+                <field name="email"/>
+                <field name="selection"/>
+
+
+
+                <field name="abin" />
+                <field name="date"/>
+
+
+          </group>
+
+
+        </form>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="wiza_action_window">
+      <field name="name">wiza window</field>
+      <field name="res_model">wiza.wiza</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- server action to the one above -->
+
+    <record model="ir.actions.server" id="wiza_action_server">
+      <field name="name">wiza server</field>
+      <field name="model_id" ref="model_wiza_wiza"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+
+
+    <!-- Top menu item -->
+
+    <menuitem name="wiza" id="wiza_menu_root"/>
+
+    <!-- menu categories -->
+
+    <menuitem name="Menu 1" id="wiza_menu_1" parent="wiza_menu_root"/>
+    <menuitem name="Menu 2" id="wiza_menu_2" parent="wiza_menu_root"/>
+
+    <!-- actions -->
+
+    <menuitem name="List" id="wiza_menu_1_list" parent="wiza_menu_1"
+              action="wiza_action_window"/>
+
+    <menuitem name="Server to list" id="wiza" parent="wiza_menu_2"
+              action="wiza_action_server"/>
+
+    <menuitem name="erroorrr" id="wiza_error" parent="wiza_menu_2" sequence="2"
+              action="wiz_action_window1"/>
+  </data>
+</odoo>

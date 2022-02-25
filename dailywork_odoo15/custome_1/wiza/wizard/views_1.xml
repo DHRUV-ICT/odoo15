@@ -1,0 +1,35 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="wiza_form">
+      <field name="name">wiza list</field>
+      <field name="model">wiza.wizard</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+            <field name="name"/>
+            <field name="value"/>
+            <field name="value2"/>
+          </group>
+          <footer>
+            <button name="check" string="print" type="object"/>
+            <button name="%(dhruv.action_window)d" string="change" type="action" />
+            <button string="Cancle" class="btn-secondary" data-hotkey="z"/>
+          </footer>
+<!--          <field name="gender"/>-->
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="wiz_action_window1">
+      <field name="name">wiz window </field>
+      <field name="res_model">wiza.wizard</field>
+      <field name="view_mode">form</field>
+      <field name="target">new</field>
+    </record>
+
+    </data>
+</odoo>
+
+
