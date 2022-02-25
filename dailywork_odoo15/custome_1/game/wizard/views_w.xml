@@ -1,0 +1,46 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="game_wizard">
+      <field name="name">game list</field>
+      <field name="model">game.wizard</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+
+            <field name="name"/>
+            <field name="value"/>
+<!--            <field name="value2"/>-->
+          </group>
+          <footer>
+<!--            <button name="click" string="print" type="object"/>-->
+            <button name="click" string="change" type="object"/>
+            <button string="Cancle" class="btn-secondary" data-hotkey="z"/>
+          </footer>
+
+        </form>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="game.action_window_current">
+      <field name="name">game window</field>
+      <field name="res_model">game.wizard</field>
+      <field name="view_mode">tree</field>
+      <field name="target">current</field>
+
+    </record>
+
+    <record model="ir.actions.act_window" id="game.action_window_wizard">
+      <field name="name">game window</field>
+      <field name="res_model">game.wizard</field>
+      <field name="view_mode">form</field>
+      <field name="target">new</field>
+
+
+    </record>
+<!--    in name give model_w.py file's class's _name game_wizard-->
+
+  </data>
+</odoo>

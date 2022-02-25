@@ -1,0 +1,73 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <record model="ir.ui.view" id="vollyball.list">
+      <field name="name">vollyball list</field>
+      <field name="model">vollyball.vollyball</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="sport_name"/>
+          <field name="position"/>
+          <field name="description"/>
+        </tree>
+      </field>
+    </record>
+
+      <!--           form  view        -->
+    <record model="ir.ui.view" id="vollyball.form">
+      <field name="name">vollyball list</field>
+      <field name="model">vollyball.vollyball</field>
+      <field name="arch" type="xml">
+        <form>
+
+          <sheet>
+            <group>
+
+              <field name="name"/>
+              <field name="sport_name"/>
+              <field name="position"/>
+
+            </group>
+          </sheet>
+
+        </form>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="vollyball.action_window">
+      <field name="name">vollyball window</field>
+      <field name="res_model">vollyball.vollyball</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- server action to the one above -->
+    <record model="ir.actions.server" id="vollyball.action_server">
+      <field name="name">vollyball server</field>
+      <field name="model_id" ref="model_vollyball_vollyball"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+
+    <!-- Top menu item -->
+    <menuitem name="vollyball" id="vollyball.menu_root"/>
+
+    <!-- menu categories -->
+    <menuitem name="Menu 1" id="vollyball.menu_1" parent="vollyball.menu_root"/>
+    <menuitem name="Menu 2" id="vollyball.menu_2" parent="vollyball.menu_root"/>
+
+    <!-- actions -->
+    <menuitem name="List" id="vollyball.menu_1_list" parent="vollyball.menu_1"
+              action="vollyball.action_window"/>
+    <menuitem name="Server to list" id="vollyball" parent="vollyball.menu_2"
+              action="vollyball.action_server"/>
+  </data>
+</odoo>

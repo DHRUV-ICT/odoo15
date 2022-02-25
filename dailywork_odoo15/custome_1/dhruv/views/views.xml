@@ -2,7 +2,7 @@
   <data>
     <!-- explicit list view definition -->
 
-    <record model="ir.ui.view" id="dhruv.list">
+    <record model="ir.ui.view" id="dhruv_list">
       <field name="name">dhruv list</field>
       <field name="model">dhruv.dhruv</field>
       <field name="arch" type="xml">
@@ -15,6 +15,28 @@
       </field>
     </record>
 
+
+    <record model="ir.ui.view" id="dhruv_form">
+      <field name="name">dhruv list</field>
+      <field name="model">dhruv.dhruv</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+            <field name="name"/>
+            <field name="value"/>
+            <field name="value2"/>
+          </group>
+          <group>
+
+            <field name="gender"/>
+            <field name="partner_id"/>
+            <field name="state"/>
+            <field name="city"  options="{'color_field': 'color'}"/>
+
+          </group>
+        </form>
+      </field>
+    </record>
 
     <!-- actions opening views on models -->
 

@@ -17,6 +17,11 @@ class dhruv(models.Model):
     selection = fields.Selection([('a','A'),('b','B'),('c','C')])
     abin = fields.Binary()
     date = fields.Datetime()
+    partner_id = fields.Many2one('res.partner')
+    city = fields.Char(related="partner_id.city",readonly=False)
+
+    state = fields.Many2one(related="partner_id.state_id",readonly=True)
+
 
 class b(models.Model):
     _inherit = 'dhruv.dhruv'

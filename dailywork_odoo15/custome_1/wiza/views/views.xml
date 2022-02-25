@@ -1,112 +1,139 @@
 <odoo>
-  <data>
-    <!-- explicit list view definition -->
+    <data>
+        <!-- explicit list view definition -->
 
-    <record model="ir.ui.view" id="wiza_list">
-      <field name="name">wiza list</field>
-      <field name="model">wiza.wiza</field>
-      <field name="arch" type="xml">
-        <tree>
-          <field name="name"/>
-          <field name="value"/>
-          <field name="value2"/>
-          <field name="email"/>
-          <field name="selection"/>
-          <field name="abin" widget="image"/>
-          <field name="date"/>
-
-
+        <record model="ir.ui.view" id="wiza_list">
+            <field name="name">wiza list</field>
+            <field name="model">wiza.wiza</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="value"/>
+                    <field name="value2"/>
+                    <field name="email"/>
+                    <field name="selection"/>
+                    <field name="abin" widget="image"/>
+                    <field name="date"/>
 
 
-        </tree>
-      </field>
-    </record>
+                </tree>
+            </field>
+        </record>
 
-    <record model="ir.ui.view" id="wiza_form">
-      <field name="name">wiza list</field>
-      <field name="model">wiza.wiza</field>
-      <field name="arch" type="xml">
-        <form>
+        <record model="ir.ui.view" id="wiza_form">
+            <field name="name">wiza list</field>
+            <field name="model">wiza.wiza</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+<!--
+                first button-->
+                            <button name="%(dhruv.action_window)d" type="action"
+                                class="oe_stat_button" icon="fa-star">
+                                <!--with name = function type =object and for jump type p action-->
 
-          <sheat>
-            <div class="oe_button_box" name="button_box" position="right">
-              <button class="oe_stat_button" name="%(dhruv.action_window)d"
-                      type="action" icon="fa-pencil-square-o">
-                <div class="smart_button">
-                  <span class="o_stat_value">smart</span>
-                </div>
-              </button>
-            </div>
+                                <div class="smart_button">
+<!--                                    <field name="calendar_event_count" class="o_stat_value"/> gives an error-->
+                                    <span class="o_stat_text">hyy</span>
+                                    <span class="o_stat_text">_hii</span>
+                                </div>
+                            </button>
 
-            <group>
+<!--
+               second button-->
+                            <button
+                                    class="oe_stat_button"
+                                    name="%(dhruv.action_window)d"
+                                    type="action"
+                                    icon="fa-star">
 
-                <field name="name"/>
-                <field name="value"/>
-                <field name="value2"/>
+                            <div class="smart_button">
+<!--                                                <field name="leads_count" class="o_stat_value"/>-->
+                                <span class="o_stat_text">Leads</span>
 
-            </group>
-          </sheat>
-          <group>
+                            </div>
+                            </button>
 
-                <field name="email"/>
-                <field name="selection"/>
+<!--
+                 third button-->
+                            <!--we can also make it with commet below div class and give string='name' beside icon-->
+                            <button class="oe_stat_button" name="%(module_2.action_window)d"
+                                    type="action" icon="fa-pencil-square-o" string="smart">
+<!--                                <div class="smart_button">-->
+<!--                                    <span class="o_stat_value">smart</span>-->
+<!--                                </div>-->
+                            </button>
+                        </div>
 
+                        <group>
 
+                            <field name="name"/>
+                            <field name="value"/>
+                            <field name="value2"/>
 
-                <field name="abin" />
-                <field name="date"/>
+                        </group>
+                        <group>
 
-
-          </group>
-
-
-        </form>
-      </field>
-    </record>
-
-    <!-- actions opening views on models -->
-
-    <record model="ir.actions.act_window" id="wiza_action_window">
-      <field name="name">wiza window</field>
-      <field name="res_model">wiza.wiza</field>
-      <field name="view_mode">tree,form</field>
-    </record>
-
-
-    <!-- server action to the one above -->
-
-    <record model="ir.actions.server" id="wiza_action_server">
-      <field name="name">wiza server</field>
-      <field name="model_id" ref="model_wiza_wiza"/>
-      <field name="state">code</field>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "tree,form",
-          "res_model": model._name,
-        }
-      </field>
-    </record>
+                            <field name="email"/>
+                            <field name="selection"/>
 
 
-    <!-- Top menu item -->
+                            <field name="abin"/>
+                            <field name="date"/>
 
-    <menuitem name="wiza" id="wiza_menu_root"/>
 
-    <!-- menu categories -->
+                        </group>
+                    </sheet>
 
-    <menuitem name="Menu 1" id="wiza_menu_1" parent="wiza_menu_root"/>
-    <menuitem name="Menu 2" id="wiza_menu_2" parent="wiza_menu_root"/>
 
-    <!-- actions -->
+                </form>
+            </field>
+        </record>
 
-    <menuitem name="List" id="wiza_menu_1_list" parent="wiza_menu_1"
-              action="wiza_action_window"/>
+        <!-- actions opening views on models -->
 
-    <menuitem name="Server to list" id="wiza" parent="wiza_menu_2"
-              action="wiza_action_server"/>
+        <record model="ir.actions.act_window" id="wiza_action_window">
+            <field name="name">wiza window</field>
+            <field name="res_model">wiza.wiza</field>
+            <field name="view_mode">tree,form</field>
+        </record>
 
-    <menuitem name="erroorrr" id="wiza_error" parent="wiza_menu_2" sequence="2"
-              action="wiz_action_window1"/>
-  </data>
+
+        <!-- server action to the one above -->
+
+        <record model="ir.actions.server" id="wiza_action_server">
+            <field name="name">wiza server</field>
+            <field name="model_id" ref="model_wiza_wiza"/>
+            <field name="state">code</field>
+            <field name="code">
+                action = {
+                "type": "ir.actions.act_window",
+                "view_mode": "tree,form",
+                "res_model": model._name,
+                }
+            </field>
+        </record>
+
+
+        <!-- Top menu item -->
+
+        <menuitem name="wiza" id="wiza_menu_root"/>
+
+        <!-- menu categories -->
+
+        <menuitem name="Menu 1" id="wiza_menu_1" parent="wiza_menu_root"/>
+        <menuitem name="Menu 2" id="wiza_menu_2" parent="wiza_menu_root"/>
+
+        <!-- actions -->
+
+        <menuitem name="List" id="wiza_menu_1_list" parent="wiza_menu_1"
+                  action="wiza_action_window"/>
+
+        <menuitem name="Server to list" id="wiza" parent="wiza_menu_2"
+                  action="wiza_action_server"/>
+
+        <menuitem name="erroorrr" id="wiza_error" parent="wiza_menu_2" sequence="2"
+                  action="wiz_action_window1"/>
+    </data>
 </odoo>

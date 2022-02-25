@@ -10,7 +10,7 @@
           <field name="name"/>
           <field name="value"/>
           <field name="value2"/>
-<!--          <field name="gender"/>-->
+          <field name="gender"/>
         </tree>
       </field>
     </record>
@@ -22,7 +22,14 @@
       <field name="model">module_2.module_2</field>
       <field name="arch" type="xml">
         <form>
+          <!--statusbar  have to give tuple's first value-->
+          <header>
+            <field name="selection" widget="statusbar" statusbar_visible="start,middle,end"/>
+          </header>
           <group>
+            <field name="name"/>
+            <field name="value"/>
+            <field name="value2"/>
             <field name="gender"/>
           </group>
         </form>
