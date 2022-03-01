@@ -11,6 +11,11 @@
           <field name="value"/>
           <field name="value2"/>
           <field name="gender"/>
+          <field name="one_2_manny"/>
+          <field name="email"/>
+          <field name="take"/>
+          <field name="date"/>
+
         </tree>
       </field>
     </record>
@@ -25,13 +30,26 @@
             <field name="name"/>
             <field name="value"/>
             <field name="value2"/>
+            <field name="email"/>
+            <field name="gender"/>
+            <field name="m2m" options="{'color_field': 'color'}" />
+            <field name="many_2_one"/>
+            <field name="take"/>
+            <field name="date"/>
+
+
           </group>
+
           <group>
 
-            <field name="gender"/>
-            <field name="partner_id"/>
-            <field name="state"/>
-            <field name="city"  options="{'color_field': 'color'}"/>
+            <notebook>
+              <head>
+                <h1>this is one_2_many</h1>
+              </head>
+              <page>
+                <field name="one_2_manny"/>
+              </page>
+            </notebook>
 
           </group>
         </form>
