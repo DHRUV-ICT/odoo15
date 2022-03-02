@@ -32,5 +32,10 @@
     # only loaded in demonstration mode
     'demo': [
         'demo/demo.xml',
-    ],
+    ], "license": "LGPL-3",
+    "application":True
+
+
+
+
 }

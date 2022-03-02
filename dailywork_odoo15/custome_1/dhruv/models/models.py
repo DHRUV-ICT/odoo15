@@ -18,10 +18,14 @@ class dhruv(models.Model):
     selection = fields.Selection([('a','A'),('b','B'),('c','C')])
     abin = fields.Binary()
     date = fields.Datetime()
+
+
     m2m = fields.Many2many('dhruv.one',string="manny_2_manny")
     many_2_one = fields.Many2one('res.partner')
+
+
     take = fields.Char(compute="_depend_value",store=True)
-    date = fields.Date('Date',default=lambda self: fields.datetime.now())
+    # date = fields.Date('Date',default=lambda self: fields.datetime.now())
 
 
     # one 2 many

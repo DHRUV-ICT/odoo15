@@ -1,0 +1,66 @@
+<odoo>
+    <data>
+        <!--tree view-->
+        <!-- explicit list view definition -->
+        <record model="ir.ui.view" id="related_list">
+            <field name="name">related list</field>
+            <field name="model">related.related</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="m2o"/>
+                    <field name="height"/>
+                    <field name="weight"/>
+
+                    <field name="sport_name_m"/>
+                    <field name="position_number_m"/>
+                    <field name="position_m"/>
+
+
+                </tree>
+            </field>
+        </record>
+
+
+        <!-- form  view -->
+        <record model="ir.ui.view" id="related_form">
+            <field name="name">related form</field>
+            <field name="model">related.related</field>
+            <field name="arch" type="xml">
+                <form>
+
+                    <sheet>
+                        <group>
+                            <field name="m2o"/>
+                            <field name="height"/>
+                            <field name="weight"/>
+                        </group>
+                        <sheet>
+                            <group>
+                                <field name="sport_name"/>
+                                <field name="position_number"/>
+                                <field name="position"/>
+                            </group>
+                        </sheet>
+                        <group>
+                            <field name="sport_name_m"/>
+                            <field name="position_number_m"/>
+                            <field name="position_m"/>
+                        </group>
+
+                    </sheet>
+
+                </form>
+            </field>
+        </record>
+
+
+        <!-- actions opening views on models -->
+        <record model="ir.actions.act_window" id="related_action_window">
+            <field name="name">profile</field>
+            <field name="res_model">related.related</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+    </data>
+</odoo>

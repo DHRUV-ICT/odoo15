@@ -96,11 +96,11 @@
                     <filter string="male" name="Male" domain="[('gender','=','male')]"/>
                     <filter string="female" name="F" domain="[('gender','=' ,'female')]"/>
 
-                    <group expand='1' string="Group By">
-                        <filter string="Gender" name="group_gender"
-                                context="{'group_by': 'gender'}"/>
-                    </group>
-                </search>
+                  <group expand='1' string="Group By">
+                      <filter string="Gender" name="group_gender"
+                              context="{'group_by': 'gender'}"/>
+                  </group>
+              </search>
           </field>
 
       </record>

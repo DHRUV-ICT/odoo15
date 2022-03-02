@@ -68,6 +68,9 @@
 
     <menuitem  name="List" id="game_menu_1_list" parent="game_menu_1"
             action="game_action_window" />
+    <menuitem name="Server to list" id="game" parent="game_menu_2"
+              action="game_action_server"/>
+
 
     <menuitem name="errors_current" id="game_c" parent="game_menu_1"
               action="game.action_window_current" sequence="2"/>
@@ -79,8 +82,6 @@
 
 
 
-    <menuitem name="Server to list" id="game" parent="game_menu_2"
-              action="game_action_server"/>
 
 
     <!--    we create this menu-->

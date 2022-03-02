@@ -2,6 +2,7 @@
   <data>
     <!-- explicit list view definition -->
 
+    <!--  tree view-->
     <record model="ir.ui.view" id="dhruv_list">
       <field name="name">dhruv list</field>
       <field name="model">dhruv.dhruv</field>
@@ -14,13 +15,13 @@
           <field name="one_2_manny"/>
           <field name="email"/>
           <field name="take"/>
-          <field name="date"/>
+<!--          <field name="date"/>-->
 
         </tree>
       </field>
     </record>
 
-
+    <!--form view -->
     <record model="ir.ui.view" id="dhruv_form">
       <field name="name">dhruv list</field>
       <field name="model">dhruv.dhruv</field>
@@ -32,10 +33,14 @@
             <field name="value2"/>
             <field name="email"/>
             <field name="gender"/>
-            <field name="m2m" options="{'color_field': 'color'}" />
+
+            <group>
+              <field name="m2m" options="{'color_field': 'color'}" />
+            </group>
+
             <field name="many_2_one"/>
             <field name="take"/>
-            <field name="date"/>
+<!--            <field name="date"/>-->
 
 
           </group>

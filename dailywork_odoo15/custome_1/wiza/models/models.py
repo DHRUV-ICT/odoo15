@@ -6,6 +6,7 @@ from odoo import models, fields, api
 class wiza(models.Model):
     _name = 'wiza.wiza'
     _description = 'wiza.wiza'
+    _inherit = ['mail.thread', 'mail.activity.mixin']
 
     name = fields.Char(string="name")
     value = fields.Integer(string="amount")
