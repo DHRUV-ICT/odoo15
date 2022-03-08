@@ -14,8 +14,9 @@
                     <field name="position_number"/>
                     <field name="position"/>
                     <field name="gender"/>
+                    <field name="m2m"/>
 <!--                    <field name="m2o_1"/>-->
-                    <field name="o2m"/>
+<!--                    <field name="o2m"/>-->
 
                 </tree>
             </field>
@@ -39,7 +40,7 @@
                             <field name="position" placeholder="name of position"/>
                             <field name="gender"/>
 
-                            <field name="o2m"/>
+<!--                            <field name="o2m"/>-->
 
 <!--                            <field name="m2o_1"/>-->
 <!--                            <field name="sport_name_m"/>-->
@@ -51,7 +52,8 @@
                         </group>
                             <group>
                                 <tree editable="bottom">
-
+                                    <field name="m2m" widget = "Many2one"/>
+                                    <field name ="player_famous"/>
 <!--                                    <field name="o2m"/>-->
                                 </tree>
                             </group>
@@ -136,6 +138,12 @@
         <!-- menu for many 2 one        -->
         <menuitem name="profile" id="related_menu_1" parent="vollyball.menu_2"
                   action="related_action_window"/>
+
+
+
+        <!-- player view       -->
+        <menuitem name="player" id="player_menu_1" parent="vollyball.menu_root"
+                  action="player_action_window"/>
 
 
     </data>

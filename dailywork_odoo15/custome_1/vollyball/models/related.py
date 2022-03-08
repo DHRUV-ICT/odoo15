@@ -4,6 +4,7 @@ class related(models.Model):
     """manny 2 one class"""
 
     _inherit='vollyball.vollyball'
+
     _name = 'related.related'
     _description = 'related.related'
 
@@ -20,9 +21,9 @@ class related(models.Model):
 
 
 
-class data(models.Model):
-    """this is for extra practice"""
+# class data(models.Model):
+#     """this is for extra practice"""
+#
+#     _name = 'player.player'
 
-    _name = 'player.player'
-
-    player
+    # player

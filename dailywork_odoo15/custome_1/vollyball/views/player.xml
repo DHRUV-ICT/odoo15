@@ -1,0 +1,48 @@
+<odoo>
+    <data>
+
+        <!--tree view-->
+        <!-- explicit list view definition -->
+        <record model="ir.ui.view" id="player_list">
+            <field name="name">player list</field>
+            <field name="model">player.player</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="famous_player_name"/>
+                    <field name="speciality"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <!-- form  view -->
+        <record model="ir.ui.view" id="player_form">
+            <field name="name">player form</field>
+            <field name="model">player.player</field>
+            <field name="arch" type="xml">
+                <form>
+
+                    <sheet>
+                        <group>
+                            <field name="famous_player_name"/>
+                            <field name="speciality"/>
+                        </group>
+                    </sheet>
+
+                </form>
+            </field>
+        </record>
+
+
+
+
+        <!-- actions opening views on models -->
+        <record model="ir.actions.act_window" id="player_action_window">
+            <field name="name">player</field>
+            <field name="res_model">player.player</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+</odoo>
+

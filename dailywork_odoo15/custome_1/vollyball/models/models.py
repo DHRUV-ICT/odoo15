@@ -26,7 +26,8 @@ class vollyball(models.Model):
     o2m = fields.One2many('related.related','m2o',string='one_2_many')
 
     """manny 2 manny"""
-    m2m = fields.Many2many('')
+    m2m = fields.Many2many('player.player')
+    player_famous = fields.Many2one('player.player', compute="famous_player")
     '''this is ralation between two fields'''
 
     @api.depends('position_number')
@@ -47,3 +48,10 @@ class vollyball(models.Model):
                 else:
                     record.position = str("no one or all rounder")
 
+    @api.depends('position')
+    def famous_player(self):
+        for record in self:
+            if record.position == 'libero' :
+                for x in record.m2m.speciality():
+                    if x == 'libero':
+                        record.players_famous = record.m2m.famous_player_name

@@ -20,6 +20,21 @@
             </field>
         </record>
 
+<!--    &lt;!&ndash; player's tree view       &ndash;&gt;-->
+<!--    <record model="ir.ui.view" id="related_list_player">-->
+<!--            <field name="name">player list</field>-->
+<!--            <field name="model">player.player</field>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <tree>-->
+<!--                    <field name="player_name"/>-->
+<!--                    <field name="speciality"/>-->
+
+
+<!--                </tree>-->
+<!--            </field>-->
+<!--        </record>-->
+
+
 
         <!-- form  view -->
         <record model="ir.ui.view" id="related_form">
@@ -35,11 +50,11 @@
                             <field name="weight"/>
                         </group>
                         <sheet>
-                            <group>
-                                <field name="sport_name"/>
-                                <field name="position_number"/>
-                                <field name="position"/>
-                            </group>
+<!--                            <group>-->
+<!--                                <field name="sport_name"/>-->
+<!--                                <field name="position_number"/>-->
+<!--                                <field name="position"/>-->
+<!--                            </group>-->
                         </sheet>
                         <group>
                             <field name="sport_name_m"/>

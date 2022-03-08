@@ -1,3 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_vollyball_vollyball,vollyball.vollyball,model_vollyball_vollyball,base.group_user,1,1,1,1
 access_related_related,related.related,model_related_related,base.group_user,1,1,1,1
+access_player_player,player.player,model_player_player,base.group_user,1,1,1,1
