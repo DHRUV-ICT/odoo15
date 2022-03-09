@@ -1,0 +1,86 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <record model="ir.ui.view" id="rental_management_2_list">
+      <field name="name">rental_management_2 list</field>
+      <field name="model">rental_management_2.rental_management_2</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="start_date"/>
+          <field name="end_date"/>
+          <field name="price"/>
+          <field name="sale"/>
+          <field name="customer"/>
+<!--          <field name="rental_type"/>-->
+          <field name="rental_product"/>
+
+        </tree>
+      </field>
+    </record>
+
+
+<!--  FORM VIEW-->
+    <record model="ir.ui.view" id="rental_management_2_form">
+      <field name="name">rental_management_2 list</field>
+      <field name="model">rental_management_2.rental_management_2</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+            <field name="name"/>
+            <field name="start_date"/>
+            <field name="end_date"/>
+            <field name="price"/>
+            <field name="sale"/>
+          </group>
+
+          <separator string="product_data"/>
+
+          <group>
+            <field name="customer"/>
+<!--            <field name="rental_type"/>-->
+            <field name="rental_product"/>
+          </group>
+
+        </form>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="rental_management_2.action_window">
+      <field name="name">rental_management_2 window</field>
+      <field name="res_model">rental_management_2.rental_management_2</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- server action to the one above -->
+    <record model="ir.actions.server" id="rental_management_2.action_server">
+      <field name="name">rental_management_2 server</field>
+      <field name="model_id" ref="model_rental_management_2_rental_management_2"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+
+    <!-- Top menu item -->
+    <menuitem name="rental_management_2" id="rental_management_2.menu_root"/>
+
+
+    <!-- menu categories -->
+    <menuitem name="Renatal Management" id="rental_management_2.menu_1" parent="rental_management_2.menu_root"/>
+    <menuitem name="Rental Type" id="rental_management_2.menu_2" parent="rental_management_2.menu_root"/>
+
+
+    <!-- actions -->
+    <menuitem name="List" id="rental_management_2.menu_1_list" parent="rental_management_2.menu_1"
+              action="rental_management_2.action_window"/>
+    <menuitem name="Server to list" id="rental_management_2" parent="rental_management_2.menu_2"
+              action="rental_management_2.action_server"/>
+  </data>
+</odoo>

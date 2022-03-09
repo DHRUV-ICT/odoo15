@@ -1,0 +1,58 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <record model="ir.ui.view" id="rental_management_list">
+      <field name="name">rental_management_2 list</field>
+      <field name="model">rental_management_2.rental_management_2</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name_re"/>
+          <field name="start_date"/>
+          <field name="end_date"/>
+          <field name="price"/>
+          <field name="sale"/>
+          <field name="customer"/>
+<!--          <field name="rental_type"/>-->
+          <field name="rental_product"/>
+
+        </tree>
+      </field>
+    </record>
+
+
+<!--  FORM VIEW-->
+    <record model="ir.ui.view" id="rental_management_form">
+      <field name="name">rental_management list</field>
+      <field name="model">rental_management.rental_management_2</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+            <field name="name_re"/>
+            <field name="start_date"/>
+            <field name="end_date"/>
+            <field name="price"/>
+            <field name="sale"/>
+          </group>
+
+          <separator string="product_data"/>
+
+          <group>
+            <field name="customer"/>
+<!--            <field name="rental_type"/>-->
+            <field name="rental_product"/>
+          </group>
+
+        </form>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="rental_management_action_window">
+      <field name="name">rental_management window</field>
+      <field name="res_model">rental_management.rental_management</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+  </data>
+</odoo>

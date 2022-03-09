@@ -1,0 +1,46 @@
+<odoo>
+  <data>
+
+      <!-- explicit list view definition -->
+    <record model="ir.ui.view" id="rental_management_menu2_list">
+      <field name="name">rental_management_memu2 list</field>
+      <field name="model">rental_management_menu2.rental_management_menu2</field>
+      <field name="arch" type="xml">
+        <tree>
+            <field name="Name"/>
+            <field name="Code"/>
+            <field name="Description"/>
+<!--            <field name="is_rental"/>-->
+<!--            <field name="rental_type_2" attrs="{'invisible': [('is_rental', '=', 'True')]}"/>-->
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="rental_management_menu2_form">
+      <field name="name">rental_management_memu2 list</field>
+      <field name="model">rental_management_menu2.rental_management_menu2</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+            <field name="Name" placeholder="name" required='1'/>
+            <field name="Code"/>
+            <field name="Description" required='1'/>
+
+<!--            <field name="is_rental"/>-->
+<!--            <field name="rental_type_2" attrs="{'invisible': [('is_rental', '=', 'False')]}"/>-->
+          </group>
+        </form>
+      </field>
+    </record>
+
+
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="rental_management_menu2_action_window">
+      <field name="name">details_menu2</field>
+      <field name="res_model">rental_management_menu2.rental_management_menu2</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+  </data>
+</odoo>
