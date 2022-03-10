@@ -31,6 +31,11 @@
                         </group>
                     </page>
                 </xpath>
+<!--   after // it will check for field              -->
+                <xpath expr="//field[@name='detailed_type']" position="after">
+                    <field name="is_rental"/>
+                    <field name="rental_type_id"/>
+                </xpath>
             </field>
         </record>
 

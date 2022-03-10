@@ -14,7 +14,7 @@
                     <field name="position_number"/>
                     <field name="position"/>
                     <field name="gender"/>
-                    <field name="m2m"/>
+<!--                    <field name="m2m"/>-->
 <!--                    <field name="m2o_1"/>-->
 <!--                    <field name="o2m"/>-->
 
@@ -29,37 +29,44 @@
             <field name="model">vollyball.vollyball</field>
             <field name="arch" type="xml">
                 <form>
+                    <header>
+                        <button string="player_name" name="player_name" type="object" />
+                        <button string="info" name="info" type="object" />
+                        <button string="international" name="international" type="object" />
 
+                        <field name="status"
+                               widget="statusbar"
+                               options="{'clickable':'2'}"
+                               statusbar_visible="a,b,c,d"/>
+                    </header>
                     <sheet>
                         <group>
-
                             <field name="name"/>
                             <field name="sport_name"/>
                             <field name="position_number" placeholder="number of position"/>
-                            <field name="description"/>
                             <field name="position" placeholder="name of position"/>
+                        </group>
+                        <group>
+
+                            <field name="description"/>
                             <field name="gender"/>
+                            <field name="spiker"/>
+                        </group>
 
-<!--                            <field name="o2m"/>-->
+                        <separator string="words best players"/>
 
-<!--                            <field name="m2o_1"/>-->
-<!--                            <field name="sport_name_m"/>-->
-<!--                            <field name="position_number_m"/>-->
-<!--                            <field name="description_m"/>-->
-
-
+                        <group>
+<!--                            <field name="m2m"/>-->
+                            <field name="player_id"/>
+                            <field name="international_player"/>
 
                         </group>
-                            <group>
-                                <tree editable="bottom">
-                                    <field name="m2m" widget = "Many2one"/>
-                                    <field name ="player_famous"/>
-<!--                                    <field name="o2m"/>-->
-                                </tree>
-                            </group>
-
-
                     </sheet>
+                    <div class='oe_chatter'>
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
 
                 </form>
             </field>
@@ -145,6 +152,9 @@
         <menuitem name="player" id="player_menu_1" parent="vollyball.menu_root"
                   action="player_action_window"/>
 
+        <!-- wizard's menu       -->
+        <menuitem name="wizard" id="wiza_menu_1_list" parent="vollyball.menu_1"
+                  action="wiza_action_window"/>
 
     </data>
 </odoo>

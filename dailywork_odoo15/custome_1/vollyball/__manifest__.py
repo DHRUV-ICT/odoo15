@@ -20,11 +20,12 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base','mail'],
 
     # always loaded
     'data': [
         'security/ir.model.access.csv',
+	    'wiza/view_wiza.xml',
         'views/player.xml',
         'views/related.xml',
         'views/views.xml',

@@ -4,7 +4,7 @@ class rental_management_menu1(models.Model):
 
     _name = 'rental_management_menu1.rental_management_menu1'
     _description='rental_management_menu1.rental_management_menu1'
-    # _inherit = ['mail.thread', 'mail.activity.mixin']
+    _inherit = ['mail.thread', 'mail.activity.mixin']
 
 
     name = fields.Char(required="True")
@@ -20,7 +20,7 @@ class rental_management_menu1(models.Model):
 
     status = fields.Selection([('a','draft'),('b','waiting'),('c','approve'),('d','ncle')],
                               string='status',
-                              default='a')
+                              default='a',tracking=True)
 
 
     @api.constrains('start_date','end_date')

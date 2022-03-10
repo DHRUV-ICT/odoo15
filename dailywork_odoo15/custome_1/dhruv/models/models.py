@@ -69,15 +69,17 @@ class one_2_manny(models.Model):
 #     _name = 'dhruv_m2o.dhruv_m2o'
 
 
-class b(models.Model):
-    _inherit = 'dhruv.dhruv'
+# class b(models.Model):
+#     _inherit = 'dhruv.dhruv'
+#
+#     gender = fields.Selection([('a','A'),('b','B')])
+#
+#
+#     @api.depends('value')
+#     def _value_pc(self):
+#         for record in self:
+#             record.value2 = float(record.value) / 100
 
-    gender = fields.Selection([('a','A'),('b','B')])
 
-
-    @api.depends('value')
-    def _value_pc(self):
-        for record in self:
-            record.value2 = float(record.value) / 100
 
 

@@ -7,3 +7,11 @@ class templates(models.Model):
 
     is_rental = fields.Boolean()
     rental_type_id = fields.Many2one('rental_management_menu2.rental_management_menu2')
+
+
+
+    # @api.onchange('partner_id')
+    # def onchange_partner_id(self):
+    #     for rec in self:
+    #         if rec.partner_id:
+    #             rec.
