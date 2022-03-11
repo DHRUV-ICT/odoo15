@@ -20,16 +20,17 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base','product','contacts', 'website'],
+    'depends': ['base','product','contacts', 'website','sale'],
 
     # always loaded
     'data': [
         'security/ir.model.access.csv',
-        'views/templates.xml',
+        'wizard/views_wiza.xml',
+	    'views/temp_2.xml',
+        'views/temp.xml',
         'views/rental_management_menu2.xml',
         'views/rental_management_menu1.xml',
         'views/views.xml',
-        'views/templates.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

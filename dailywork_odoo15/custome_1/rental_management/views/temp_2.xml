@@ -1,0 +1,38 @@
+<odoo>
+    <data>
+
+        <!-- explicit list view definition -->
+        <!--   TREE VIEW     -->
+        <record model="ir.ui.view" id="temp_2_list">
+            <field name="name">temp_2 list</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <field name="partner_id" position="after">
+                    <field name="email"/>
+                    <field name="Mobile"/>
+                </field>
+            </field>
+        </record>
+
+
+        <!--  FORM VIEW  -->
+        <record model="ir.ui.view" id="temp_2_form">
+        <field name="name">temp_2 form</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('oe_button_box')]" position="before">
+                <button string="wizard" name="%(rental_management.wizard_action_window)d" type="action"/>
+            </xpath>
+
+            <!--   after // it will check for field              -->
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="email" widget="email"/>
+                <field name="Mobile"/>
+            </xpath>
+        </field>
+        </record>
+
+    </data>
+</odoo>

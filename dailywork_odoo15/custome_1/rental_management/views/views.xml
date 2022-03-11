@@ -70,21 +70,25 @@
 <!--        </record>-->
 
         <!-- Top menu item -->
-        <menuitem name="rental_management_1" id="rental_management.menu_root"/>
+        <menuitem name="rental_management_1" id="rental_management_menu_root"/>
 
         <!-- menu categories -->
-        <menuitem name="rental_management_menu1" id="rental_management.menu_1" parent="rental_management.menu_root"/>
-        <menuitem name="rental" id="rental_management.menu_2" parent="rental_management.menu_root"/>
+        <menuitem name="rental_management_menu1" id="rental_management_menu_1" parent="rental_management_menu_root"/>
+        <menuitem name="rental" id="rental_management_menu_2" parent="rental_management_menu_root"/>
 
         <!-- actions -->
         <!--  rental_management  -->
-        <menuitem name="related_management_menu1_details" id="rental_management.menu_1_list"
-                  parent="rental_management.menu_1"
+        <menuitem name="related_management_menu1_details" id="rental_management_menu_1_list"
+                  parent="rental_management_menu_1"
                   action="rental_management_menu1_action_window"/>
 
         <!-- reantal.type -->
-        <menuitem name="details_menu2" id="rental_type_menu_2" parent="rental_management.menu_2"
+        <menuitem name="details_menu2" id="rental_type_menu_2" parent="rental_management_menu_2"
                   action="rental_management_menu2_action_window"/>
+
+        <!--  wizarddd      -->
+        <menuitem name="wizard" id="wizard_type_menu_2" parent="rental_management_menu_1"
+                  action="wizard_action_window"/>
 
 
         <!--  TEMPLATES      -->

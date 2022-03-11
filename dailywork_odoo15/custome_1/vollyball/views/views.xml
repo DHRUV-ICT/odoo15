@@ -41,7 +41,7 @@
                     </header>
                     <sheet>
                         <group>
-                            <field name="name"/>
+                            <field name="name" default="1"/>
                             <field name="sport_name"/>
                             <field name="position_number" placeholder="number of position"/>
                             <field name="position" placeholder="name of position"/>
@@ -58,7 +58,7 @@
                         <group>
 <!--                            <field name="m2m"/>-->
                             <field name="player_id"/>
-                            <field name="international_player"/>
+                            <field name="international_player" widget="Many2one"/>
 
                         </group>
                     </sheet>

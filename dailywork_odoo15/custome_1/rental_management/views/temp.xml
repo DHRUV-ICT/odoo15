@@ -1,0 +1,43 @@
+<odoo>
+    <data>
+
+        <!-- explicit list view definition -->
+        <!--   TREE VIEW     -->
+        <record model="ir.ui.view" id="temp_list">
+            <field name="name">temp list</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_tree_view"/>
+            <field name="arch" type="xml">
+                <field name="active" position="after">
+                    <field name="is_rental"/>
+                    <field name="rental_type_id"/>
+                </field>
+            </field>
+        </record>
+
+
+        <!--  FORM VIEW  -->
+        <record model="ir.ui.view" id="temp_form">
+        <field name="name">temp form</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='sales']" position="after">
+                <page string="Rental">
+                    <group>
+                        <field name="is_rental"/>
+                        <field name="rental_type_id" attrs="{'invisible': [('is_rental', '=', False)]}"
+                               required="True"/>
+                    </group>
+                </page>
+            </xpath>
+            <!--   after // it will check for field              -->
+            <xpath expr="//field[@name='detailed_type']" position="after">
+                <field name="is_rental"/>
+                <field name="rental_type_id"/>
+            </xpath>
+        </field>
+        </record>
+
+    </data>
+</odoo>

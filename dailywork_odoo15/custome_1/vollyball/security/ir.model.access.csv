@@ -3,3 +3,4 @@ access_vollyball_vollyball,vollyball.vollyball,model_vollyball_vollyball,base.gr
 access_related_related,related.related,model_related_related,base.group_user,1,1,1,1
 access_player_player,player.player,model_player_player,base.group_user,1,1,1,1
 access_wiza_wiza,wiza.wiza,model_wiza_wiza,base.group_user,1,1,1,1
+access_res_partner,res.partner,model_res_partner,base.group_user,1,1,1,1

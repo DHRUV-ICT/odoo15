@@ -38,8 +38,8 @@ class vollyball(models.Model):
 
     """manny 2 manny"""
     # m2m = fields.Many2many('player.player',string='wwp')
-    player_id = fields.Many2many('player.player')
-    international_player = fields.Char(related='player_id.famous_player_name',string="world's player")
+    player_id = fields.Many2one('player.player',string='Players')
+    international_player = fields.Char(related='player_id.speciality',string="world's player")
     # task = fields.Many2one('player.player',string="task")
 
 
@@ -116,6 +116,15 @@ class vollyball(models.Model):
     #     res = super(vollyball,self).create(vals_list)
     #     print("resresres", res)
     #     return res
+
+    @api.model
+    def default_get(self, fields):
+        res = super(vollyball, self).default_get(fields)
+
+        res['name'] = 'your name'
+        res['gender'] = 'male'
+
+        return res
 
 
 

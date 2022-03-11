@@ -1,0 +1,54 @@
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+        <record model="ir.ui.view" id="wiza_list">
+            <field name="name">wiza list</field>
+            <field name="model">wiza.wiza</field>
+            <field name="arch" type="xml">
+                <tree>
+
+                    <field name="customer"/>
+                    <field name="email"/>
+                    <field name="sales_person"/>
+                    <field name="sales_person_contact"/>
+                    <field name="payment_terms"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="wizard_form">
+            <field name="name">wizard list</field>
+            <field name="model">wiza.wiza</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+
+                        <group>
+                            <field name="customer"/>
+                            <field name="email"/>
+
+                        <separator/>
+                            <field name="sales_person"/>
+                            <field name="sales_person_contact"/>
+                            <field name="payment_terms"/>
+                        </group>
+                    </sheet>
+
+
+
+                </form>
+            </field>
+        </record>
+
+
+        <!-- actions opening views on models -->
+        <record model="ir.actions.act_window" id="wizard_action_window">
+            <field name="name">wizard</field>
+            <field name="res_model">wiza.wiza</field>
+            <field name="target">new</field>
+            <field name="view_mode">form</field>
+        </record>
+
+    </data>
+</odoo>

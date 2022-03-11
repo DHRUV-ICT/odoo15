@@ -31,3 +31,18 @@ class related(models.Model):
             result.append((rec.id, '%s - %s' % (rec.famous_player_name, rec.speciality)))
             print(result)
         return result
+
+    @api.model
+    def _name_search(self, name='', args=None, operator='=', limit=100, name_get_uid=None):
+        args = args or []
+        domain = []
+        if name:
+            domain = ['|', ('famous_player_name', operator, name), ('speciality', operator, name)]
+        return self._search(domain + args, limit=limit, access_rights_uid=name_get_uid)
+
+    @api.model
+    def default_get(self, fields):
+        res = super(related, self).default_get(fields)
+        print('test.....')
+        res['famous_player_name'] = 'anyone'
+        return res
