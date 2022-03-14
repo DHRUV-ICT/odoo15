@@ -2,6 +2,7 @@ from odoo import models, fields, api
 
 class temp(models.Model):
     _inherit = 'product.template'
+
     # _name = 'templates.templates'
 
     is_rental = fields.Boolean()

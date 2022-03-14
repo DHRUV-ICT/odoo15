@@ -41,6 +41,9 @@
                     </header>
                     <sheet>
                         <group>
+                            <button name="button_press" string="chatter" id="button_press" type="object"/>
+                        </group>
+                        <group>
                             <field name="name" default="1"/>
                             <field name="sport_name"/>
                             <field name="position_number" placeholder="number of position"/>

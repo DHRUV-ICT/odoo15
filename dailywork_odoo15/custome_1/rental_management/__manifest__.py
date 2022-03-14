@@ -26,6 +26,7 @@
     'data': [
         'security/ir.model.access.csv',
         'wizard/views_wiza.xml',
+        'wizard/views_wiza.xml',
 	    'views/temp_2.xml',
         'views/temp.xml',
         'views/rental_management_menu2.xml',

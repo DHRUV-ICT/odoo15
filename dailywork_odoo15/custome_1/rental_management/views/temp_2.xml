@@ -11,6 +11,7 @@
                 <field name="partner_id" position="after">
                     <field name="email"/>
                     <field name="Mobile"/>
+                    <field name="customer_ref"/>
                 </field>
             </field>
         </record>
@@ -23,13 +24,15 @@
         <field name="inherit_id" ref="sale.view_order_form"/>
         <field name="arch" type="xml">
             <xpath expr="//div[hasclass('oe_button_box')]" position="before">
-                <button string="wizard" name="%(rental_management.wizard_action_window)d" type="action"/>
+                <button string="wizard_default" name="%(rental_management.wizard_action_window)d" type="action"/>
             </xpath>
 
-            <!--   after // it will check for field              -->
+<!--              """ after // it will check for field """              -->
+
             <xpath expr="//field[@name='partner_id']" position="after">
                 <field name="email" widget="email"/>
                 <field name="Mobile"/>
+                <field name="customer_ref"/>
             </xpath>
         </field>
         </record>

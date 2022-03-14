@@ -1,0 +1,40 @@
+<!--<odoo>-->
+<!--    <data>-->
+<!--        &lt;!&ndash;tree view&ndash;&gt;-->
+<!--        &lt;!&ndash; explicit list view definition &ndash;&gt;-->
+<!--&lt;!&ndash;        <record model="ir.ui.view" id="related_list">&ndash;&gt;-->
+<!--&lt;!&ndash;            <field name="name">related list</field>&ndash;&gt;-->
+<!--&lt;!&ndash;            <field name="model">related.related</field>&ndash;&gt;-->
+<!--&lt;!&ndash;            <field name="arch" type="xml">&ndash;&gt;-->
+<!--&lt;!&ndash;                <tree>&ndash;&gt;-->
+<!--&lt;!&ndash;                </tree>&ndash;&gt;-->
+<!--&lt;!&ndash;            </field>&ndash;&gt;-->
+<!--&lt;!&ndash;        </record>&ndash;&gt;-->
+
+<!--        &lt;!&ndash; form  view &ndash;&gt;-->
+<!--        <record model="ir.ui.view" id="sale_inhe_form">-->
+<!--            <field name="name">sale_inhe form</field>-->
+<!--            <field name="model">sale.order</field>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <form>-->
+<!--                    <sheet>-->
+<!--                        <group>-->
+<!--                        </group>-->
+
+<!--                    </sheet>-->
+
+<!--                </form>-->
+<!--            </field>-->
+<!--        </record>-->
+
+
+<!--        &lt;!&ndash; actions opening views on models &ndash;&gt;-->
+<!--        <record model="ir.actions.act_window" id="sale_inhe_window">-->
+<!--            <field name="name">sale_inhe</field>-->
+<!--            <field name="res_model">sale.order</field>-->
+<!--            <field name="view_mode">form</field>-->
+<!--        </record>-->
+
+
+<!--    </data>-->
+<!--</odoo>-->

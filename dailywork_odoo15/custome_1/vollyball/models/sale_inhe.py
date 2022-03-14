@@ -14,12 +14,20 @@ class sale_inhe(models.Model):
         return result
 
 
-    """nmae_search"""
+    """name_search"""
 
     @api.model
     def _name_search(self, name='', args=None, operator='=', limit=100, name_get_uid=None):
         args = args or []
         domain = []
         if name:
-            domain = ['|', ('name', operator, name), ('phone', operator, name)]
+            domain = ['|', ('name', operator, name), ('email', operator, name)]
         return self._search(domain + args, limit=limit, access_rights_uid=name_get_uid)
+
+    """NAME SEARCH"""
+
+    # def name_search(self, name='', args=None , operator='',limit=100 , nmae_get_uid=None):
+    #     args = args or []
+    #     domain = []
+    #     if name:
+    #         domain = ['|',('name', operator , name),('phone',operator,email)]
