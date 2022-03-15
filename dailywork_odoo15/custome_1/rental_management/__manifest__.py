@@ -25,7 +25,8 @@
     # always loaded
     'data': [
         'security/ir.model.access.csv',
-        'wizard/views_wiza.xml',
+        # 'views/sale_inhe.xml',
+        'views/res_part.xml',
         'wizard/views_wiza.xml',
 	    'views/temp_2.xml',
         'views/temp.xml',

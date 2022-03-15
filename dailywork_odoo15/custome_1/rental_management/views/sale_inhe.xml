@@ -12,13 +12,18 @@
 <!--&lt;!&ndash;        </record>&ndash;&gt;-->
 
 <!--        &lt;!&ndash; form  view &ndash;&gt;-->
-<!--        <record model="ir.ui.view" id="sale_inhe_form">-->
-<!--            <field name="name">sale_inhe form</field>-->
+<!--        <record model="ir.ui.view" id="sale_order_form">-->
+<!--            <field name="name">sale_order form</field>-->
 <!--            <field name="model">sale.order</field>-->
+<!--            <field name="inherit_id" ref="sale.view_order_form"/>-->
 <!--            <field name="arch" type="xml">-->
 <!--                <form>-->
 <!--                    <sheet>-->
 <!--                        <group>-->
+<!--                        <xpath expr="//field[@name='payment_term_id']" position="after">-->
+<!--                            <field name="age"/>-->
+<!--                            <field name="b_date"/>-->
+<!--                        </xpath>-->
 <!--                        </group>-->
 
 <!--                    </sheet>-->
@@ -29,8 +34,8 @@
 
 
 <!--        &lt;!&ndash; actions opening views on models &ndash;&gt;-->
-<!--        <record model="ir.actions.act_window" id="sale_inhe_window">-->
-<!--            <field name="name">sale_inhe</field>-->
+<!--        <record model="ir.actions.act_window" id="sale_order_window">-->
+<!--            <field name="name">sale_order</field>-->
 <!--            <field name="res_model">sale.order</field>-->
 <!--            <field name="view_mode">form</field>-->
 <!--        </record>-->

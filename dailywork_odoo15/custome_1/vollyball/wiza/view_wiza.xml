@@ -8,8 +8,8 @@
             <field name="model">wiza.wiza</field>
             <field name="arch" type="xml">
                 <tree>
-                    <field name="name"/>
-                    <field name="position_wiza"/>
+                    <field name="weight"/>
+                    <field name="height"/>
 
                 </tree>
             </field>
@@ -23,13 +23,13 @@
             <field name="arch" type="xml">
                 <form>
                     <group>
-                        <field name="name"/>
-                        <field name="position_wiza"/>
+                        <field name="weight"/>
+                        <field name="height"/>
 
                         <footer>
-                            <button string="create_wiza" name="create" type="object" class="btn-primary" />
-                            <button string="write_wiza" name="write" type="object" class="btn-primary"/>
-<!--                            <button string="unlink" name="unlink" type="object" class="btn-primary"/>-->
+                            <button string="create_wiza" name="create_rec" type="object" class="btn-primary" />
+                            <button string="write_wiza" name="write_rec" type="object" class="btn-primary"/>
+                            <button string="unlink_wiza" name="unlink_rec" type="object" class="btn-primary"/>
                         </footer>
 
                     </group>
@@ -44,7 +44,7 @@
         <record model="ir.actions.act_window" id="wiza_action_window">
             <field name="name">wizard_icon</field>
             <field name="res_model">wiza.wiza</field>
-            <field name="view_mode">form</field>
+            <field name="view_mode">form,tree</field>
             <field name="target">new</field>
         </record>
 

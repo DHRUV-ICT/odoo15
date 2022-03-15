@@ -11,7 +11,7 @@ class rental_management_wiza(models.Model):
     _rec_name = 'customer'
 
 
-    customer = fields.Char('sale.order')
+    customer = fields.Char()
     email = fields.Char()
     sales_person = fields.Char()
     sales_person_contact = fields.Char()

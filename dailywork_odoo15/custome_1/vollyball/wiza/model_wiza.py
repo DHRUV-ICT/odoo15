@@ -7,20 +7,20 @@ class wizard(models.TransientModel):
     _name = 'wiza.wiza'
     _description = 'wiza.wiza'
 
-    name = fields.Char()
-    position_wiza = fields.Integer()
+    weight = fields.Integer()
+    # position_wiza = fields.Integer()
+    height = fields.Integer()
 
-    @api.model
-    def create(self,vals):
-        rtn = super().create(vals)
-        print(rtn)
-        # rtn = self.env['related'].create(vals)
+    def create_rec(self):
+        # rtn = super(wizard,self).create(vals)
+        rtn = self.env['related.related'].create({'height':self.height , 'weight':self.weight})
         return rtn
 
-    def write(self,vals):
-        rtn = super(wizard,self).write(vals)
+    def write_rec(self):
+        rtn = self.env['related.related'].update({'height':self.height , 'weight':self.weight})
         return rtn
 
-    # def unlink(self,vals):
-    #     rtn = super(self).unlink(vals)
-    #     return rtn
+    def unlink_rec(self):
+        rtn = self.env['related.related'].unlink({'height': self.height, 'weight': self.weight})
+
+        return rtn
