@@ -10,6 +10,7 @@
         <field name="arch" type="xml">
             <xpath expr="//div[hasclass('oe_button_box')]" position="before">
                 <button string="wizard  default" name="%(rental_management.wizard_action_window)d" type="action"/>
+                <button string="read and crate " name="search_get" type="object"/>
             </xpath>
 
             <xpath expr="//field[@name='partner_id']" position="after">
@@ -19,9 +20,10 @@
             </xpath>
 
             <xpath expr="//field[@name='payment_term_id']" position="after">
-                <field name="age"/>
                 <field name="b_date"/>
                 <field name="from_date"/>
+                <field name="age"/>
+                <field name="read_rec"/>
             </xpath>
 
         </field>

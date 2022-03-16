@@ -1,5 +1,6 @@
 from odoo import models, fields, api
 from datetime import date
+from odoo.exceptions import UserError
 
 class temp_2(models.Model):
     _inherit = 'sale.order'
@@ -8,10 +9,11 @@ class temp_2(models.Model):
     Mobile = fields.Char()
     customer_ref = fields.Char()
 
-    age = fields.Date(compute='your_age')
+    age = fields.Integer(compute='_compute_your_age')
     b_date = fields.Date()
-    # today_date = fields.Date(default=date.today())
     from_date = fields.Date(string="From Date", default=date.today())
+
+    read_rec = fields.Char()
 
     @api.onchange('partner_id')
     def _onchange_partner_id(self):
@@ -41,8 +43,32 @@ class temp_2(models.Model):
 
 
     @api.depends('b_date','from_date')
-    def your_age(self):
-        if self.from_date > self.b_date:
-            raise ('afafafafaf')
+    def _compute_your_age(self):
+        if self.b_date:
+            self.age = self.from_date.year - self.b_date.year
+        else:
+            self.age = 0
 
 
+    """read search_read browsw"""
+
+    # @api.depends('email')
+    def search_get(self):
+        rec = self.env['res.partner'].search([('email','!=',False)]).read(['email'])
+        rec1 = self.env['res.partner'].browse()
+        rec2 = self.env['res.partner'].search_read([('email','!=',False)])
+
+        print("##############%%%%%%%%%%%%%^^^^^^^^^^^^^^")
+        print(rec1)
+        # if self.read_rec:
+        #     self.read_rec  = rec
+        # return rec , rec1 , rec2
+
+
+    def action_confirm(self):
+        for rec in self:
+            count = len(rec.order_line)
+            if count > 3:
+                raise UserError('UserError: You can only add max 3 lines per order')
+            else:
+                return super(temp_2,self).action_confirm()

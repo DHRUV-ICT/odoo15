@@ -31,3 +31,10 @@ class sale_inhe(models.Model):
     #     domain = []
     #     if name:
     #         domain = ['|',('name', operator , name),('phone',operator,email)]
+
+    """search read_search browse"""
+
+    def search_browse(self):
+        rec = self.env('res.partner').search(['email','!=',False]).read(['email','name'])
+        print("------------------------------------444444444444444444444444--------------444444444444444444")
+        return rec
