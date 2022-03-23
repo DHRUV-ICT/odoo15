@@ -54,6 +54,7 @@
                             <field name="description"/>
                             <field name="gender"/>
                             <field name="spiker"/>
+                            <field name="height"/>
                         </group>
 
                         <separator string="words best players"/>
@@ -62,7 +63,7 @@
 <!--                            <field name="m2m"/>-->
                             <field name="player_id"/>
                             <field name="international_player" widget="Many2one"/>
-
+                            <field name="position_number_player" widget="Many2one"/>
                         </group>
                     </sheet>
                     <div class='oe_chatter'>

@@ -11,6 +11,7 @@ class related(models.Model):
 
     famous_player_name = fields.Char()
     speciality = fields.Char()
+    position_player = fields.Integer()
 
 
     # @api.model
@@ -28,8 +29,11 @@ class related(models.Model):
     def name_get(self):
         result = []
         for rec in self:
-            result.append((rec.id, f"{rec.famous_player_name} -  {rec.speciality}"))
-            print(result)
+            if rec.speciality == True:
+                result.append((rec.id, f"{rec.famous_player_name} -  {rec.speciality}"))
+                print(result)
+            else:
+                result.append((rec.id,f"{rec.famous_player_name}"))
         return result
 
     @api.model

@@ -1,0 +1,36 @@
+<odoo>
+    <record id="res_config_settings_view_form_inherit" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.custom</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('settings')]//div[@id='languages']" position="before">
+                <h2>Custom Test</h2>
+                <div class="row mt16 o_settings_container" name="catalog_setting_container">
+                    <div class="col-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_left_pane">
+                            <field name="click"/>
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="click"/>
+                            <div class="text-muted">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 o_setting_box" attrs="{'invisible':[('click', '=', False)]}">
+                        <label for="track"/>
+                        <field name="track"/>
+                        <div class="text-muted">
+                        </div>
+                        <div class="col-12 col-lg-6 o_setting_box" attrs="{'invisible':[('click', '=', False)]}">
+                            <label for="html"/>
+                            <field name="html"/>
+                            <div class="text-muted">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

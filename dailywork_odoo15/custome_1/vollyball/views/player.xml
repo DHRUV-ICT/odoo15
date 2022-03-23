@@ -10,6 +10,7 @@
                 <tree>
                     <field name="famous_player_name"/>
                     <field name="speciality"/>
+                    <field name="position_player"/>
                 </tree>
             </field>
         </record>
@@ -26,6 +27,7 @@
                         <group>
                             <field name="famous_player_name"/>
                             <field name="speciality"/>
+                            <field name="position_player"/>
                         </group>
                     </sheet>
 

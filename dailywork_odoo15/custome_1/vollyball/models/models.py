@@ -18,6 +18,7 @@ class vollyball(models.Model):
     description = fields.Text(tracking=True)
     gender = fields.Selection([('male', 'male'), ('female', 'female')], tracking=True)
     spiker = fields.Boolean(tracking=True)
+    height = fields.Integer()
 
     """this is status bar """
     status = fields.Selection([('a', 'player_name'), ('b', 'info'), ('c', "world's player")]
@@ -28,8 +29,9 @@ class vollyball(models.Model):
     """one 2 manny"""
     o2m = fields.One2many('related.related', 'm2o', string='one_2_many')
 
-    player_id = fields.Many2one('player.player', string='Players')
-    international_player = fields.Char(related='player_id.speciality', string="world's player")
+    player_id = fields.Many2one('player.player', string='your best player')
+    international_player = fields.Char(related='player_id.speciality', string="positions")
+    position_number_player = fields.Integer(related='player_id.position_player',string="position_number")
 
     '''this is ralation between two fields'''
 
@@ -107,7 +109,7 @@ class vollyball(models.Model):
 #     return res
 
 
-# @api.model
+# @ai.model
 # def create(self, vals):
 #     rtn = super(vollyball, self).create(vals)
 #     # rtn = self.env['related'].create(vals)

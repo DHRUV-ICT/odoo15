@@ -7,3 +7,4 @@ from . import temp
 from . import rental_management_menu2
 from . import rental_management_menu1
 from . import models
+from . import setting

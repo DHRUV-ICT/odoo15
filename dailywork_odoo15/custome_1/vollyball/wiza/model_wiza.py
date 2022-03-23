@@ -17,10 +17,20 @@ class wizard(models.TransientModel):
         return rtn
 
     def write_rec(self):
-        rtn = self.env['related.related'].update({'height':self.height , 'weight':self.weight})
+        rtn = self.env['related.related'].write({'height':self.height , 'weight':self.weight})
         return rtn
+
+    # def write_rec(self):
+    #
+    #     rental_type = self.env['related.related'].browse(self.env.context.get("active_id"))
+    #     rental_type.write({'height':self.height , 'weight':self.weight})
+    #     # print(self.env['active_id'])
 
     def unlink_rec(self):
-        rtn = self.env['related.related'].unlink({'height': self.height, 'weight': self.weight})
-
+        rtn = self.env['related.related'].unlink(({'height': self.height}))
         return rtn
+
+    # @api.depends('height')
+    # def wiza_height(self):
+    #     self.height = self.env['wiza.wiza'].browse(self.id).height
+
