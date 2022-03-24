@@ -1,5 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_rental_management_rental_management,rental_management.rental_management,model_rental_management_rental_management,base.group_user,1,1,1,1
-access_rental_management_menu1_rental_management_menu1,rental_management_menu1.rental_management_menu1,model_rental_management_menu1_rental_management_menu1,base.group_user,1,1,1,1
-access_rental_management_menu2_rental_management_menu2,rental_management_menu2.rental_management_menu2,model_rental_management_menu2_rental_management_menu2,base.group_user,1,1,1,1
-access_wiza_wiza,wiza.wiza,model_wiza_wiza,base.group_user,1,1,1,1
+access_product_detail,product.detail,model_product_detail,base.group_user,1,1,1,1

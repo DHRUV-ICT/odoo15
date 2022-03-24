@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 {
     'name': "rental_management",
 
@@ -20,23 +19,21 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base','product','contacts', 'website','sale'],
+    'depends': ['base'],
 
     # always loaded
     'data': [
         'security/ir.model.access.csv',
-        'views/setting.xml',
-        # 'views/sale_inhe.xml',
-        'views/res_part.xml',
-        'wizard/views_wiza.xml',
-	    'views/temp_2.xml',
-        'views/temp.xml',
-        'views/rental_management_menu2.xml',
-        'views/rental_management_menu1.xml',
+        'views/product.xml',
         'views/views.xml',
+        'views/templates.xml',
+        'qweb/report_paper.xml',
+        'qweb/report_action.xml',
+        'qweb/report_templates.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
         'demo/demo.xml',
     ],
 }
+# -*- coding: utf-8 -*-

@@ -1,112 +1,76 @@
 <odoo>
-    <data>
-        <!-- explicit list view definition -->
-        <record model="ir.ui.view" id="rental_management_list">
-            <field name="name">rental_management list</field>
-            <field name="model">rental_management.rental_management</field>
-            <field name="arch" type="xml">
-                <tree>
+  <data>
+    <!-- explicit list view definition -->
+    <record model="ir.ui.view" id="rental_management.list">
+      <field name="name">rental_management list</field>
+      <field name="model">rental_management.rental_management</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+          <field name="products"/>
+        </tree>
+      </field>
+    </record>
 
-                    <field name="name"/>
-                    <field name="customer"/>
-                    <field name="rental_type"/>
-                    <field name="start_date"/>
-                    <field name="end_date"/>
-                    <field name="rental_product"/>
-                    <field name="price"/>
-                    <field name="state"/>
+<!--    form view-->
+    <record model="ir.ui.view" id="rental_management_form">
+      <field name="name">rental_management form</field>
+      <field name="model">rental_management.rental_management</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
 
-                </tree>
-            </field>
-        </record>
-
-
-        <record model="ir.ui.view" id="rental_management_form">
-            <field name="name">rental_management list</field>
-            <field name="model">rental_management.rental_management</field>
-            <field name="arch" type="xml">
-                <form>
-                    <group>
-                        <field name="name"/>
-                        <field name="start_date"/>
-                        <field name="end_date"/>
-                        <field name="price"/>
-                        <field name="state"/>
-                    </group>
-
-
-                    <group>
-
-                        <field name="customer"/>
-                        <field name="rental_type"/>
-                        <field name="rental_product"/>
+              <field name="name"/>
+              <field name="value"/>
+          </group>
+          <group>
+            <field name="value2"/>
+            <field name="products"/>
+          </group>
+        </form>
+      </field>
+    </record>
 
 
-                    </group>
-                </form>
-            </field>
-        </record>
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="rental_management.action_window">
+      <field name="name">rental_management window</field>
+      <field name="res_model">rental_management.rental_management</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- server action to the one above -->
+    <record model="ir.actions.server" id="rental_management.action_server">
+      <field name="name">rental_management server</field>
+      <field name="model_id" ref="model_rental_management_rental_management"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+
+    <!-- Top menu item -->
+    <menuitem name="rental_management" id="rental_management.menu_root"/>
+    <!-- menu categories -->
+    <menuitem name="Menu 1" id="rental_management.menu_1" parent="rental_management.menu_root"/>
+    <menuitem name="Menu 2" id="rental_management.menu_2" parent="rental_management.menu_root"/>
+    <!-- actions -->
+    <menuitem name="List" id="rental_management.menu_1_list" parent="rental_management.menu_1"
+              action="rental_management.action_window"/>
+    <menuitem name="Server to list" id="rental_management" parent="rental_management.menu_2"
+              action="rental_management.action_server"/>
 
 
-        <!-- actions opening views on models -->
-        <record model="ir.actions.act_window" id="rental_management.action_window">
-            <field name="name">rental_management window</field>
-            <field name="res_model">rental_management.rental_management</field>
-            <field name="view_mode">tree,form</field>
-        </record>
-
-        <!-- server action to the one above -->
-<!--        <record model="ir.actions.server" id="rental_management.action_server">-->
-<!--            <field name="name">rental_management server</field>-->
-<!--            <field name="model_id" ref="model_rental_management_rental_management"/>-->
-<!--            <field name="state">code</field>-->
-<!--            <field name="code">-->
-<!--                action = {-->
-<!--                "type": "ir.actions.act_window",-->
-<!--                "view_mode": "tree,form",-->
-<!--                "res_model": model._name,-->
-<!--                }-->
-<!--            </field>-->
-<!--        </record>-->
-
-        <!-- Top menu item -->
-        <menuitem name="rental_management_1" id="rental_management_menu_root"/>
-
-        <!-- menu categories -->
-        <menuitem name="rental_management_menu1" id="rental_management_menu_1" parent="rental_management_menu_root"/>
-        <menuitem name="rental" id="rental_management_menu_2" parent="rental_management_menu_root"/>
-
-        <!-- actions -->
-        <!--  rental_management  -->
-        <menuitem name="related_management_menu1_details" id="rental_management_menu_1_list"
-                  parent="rental_management_menu_1"
-                  action="rental_management_menu1_action_window"/>
-
-        <!-- reantal.type -->
-        <menuitem name="details_menu2" id="rental_type_menu_2" parent="rental_management_menu_2"
-                  action="rental_management_menu2_action_window"/>
-
-        <!--  wizarddd      -->
-        <menuitem name="wizard" id="wizard_type_menu_2" parent="rental_management_menu_1"
-                  action="wizard_action_window"/>
+<!--    product detail-->
+    <menuitem name="product_detail" id="product_detail" parent="rental_management.menu_root"
+              action="product_detail_action_window"/>
 
 
-        <!--  TEMPLATES      -->
-<!--        <menuitem name="template" id="templates" parent="rental_management.menu_2"-->
-<!--                  action="templates_action_window"/>-->
-
-        <!--    rental.templets-->
-        <!--    <menuitem name="rental_templates" id="rental_template_menu_2" parent="rental_management.menu_2"-->
-        <!--              action="rental_management_menu2_action_window"/>-->
-
-        <!--    <menuitem name="Server to list" id="rental_management" parent="rental_management.menu_2"-->
-        <!--              action="rental_management.action_server"/>-->
-
-
-        <!--              action="rental_management.action_window"/>-->
-
-        <!--    <menuitem name="List" id="rental_management.menu_1_list" parent="rental_management.menu_1"-->
-
-
-    </data>
+  </data>
 </odoo>

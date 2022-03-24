@@ -14,6 +14,7 @@
                     <field name="position_number"/>
                     <field name="position"/>
                     <field name="gender"/>
+                    <field name="id"/>
 <!--                    <field name="m2m"/>-->
 <!--                    <field name="m2o_1"/>-->
 <!--                    <field name="o2m"/>-->
@@ -109,6 +110,24 @@
                 </search>
             </field>
         </record>
+
+
+<!--        &lt;!&ndash;        chatter&ndash;&gt;-->
+<!--        <record id="chat_search" model="ir.ui.view">-->
+<!--            <field name="name">chat search</field>-->
+<!--            <field name="model">chat.chat</field>-->
+<!--            <field name="arch" type="xml">-->
+<!--&lt;!&ndash;                <group>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <button name="button_press" string="chatter" id="button_press" type="object"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                </group> &ndash;&gt;-->
+<!--                <div class='oe_chatter'>-->
+<!--                        <field name="message_follower_ids"/>-->
+<!--                        <field name="activity_ids"/>-->
+<!--                        <field name="message_ids"/>-->
+<!--                </div>-->
+<!--            </field>-->
+<!--        </record>-->
+
 
 
         <!-- actions opening views on models -->

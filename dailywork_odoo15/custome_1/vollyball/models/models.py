@@ -5,7 +5,7 @@ from odoo import models, fields, api
 
 class vollyball(models.Model):
     _name = 'vollyball.vollyball'
-
+    # _inherit = 'player.player'
     """ for show speciality not object"""
 
     _rec_name = 'international_player'
@@ -29,7 +29,7 @@ class vollyball(models.Model):
     """one 2 manny"""
     o2m = fields.One2many('related.related', 'm2o', string='one_2_many')
 
-    player_id = fields.Many2one('player.player', string='your best player')
+    player_id = fields.Many2many('player.player', string='your best player',compute="_six_zero")
     international_player = fields.Char(related='player_id.speciality', string="positions")
     position_number_player = fields.Integer(related='player_id.position_player',string="position_number")
 
@@ -76,12 +76,23 @@ class vollyball(models.Model):
 
     ''' task no.3'''
 
+
     @api.depends('vollyball')
     def button_press(self):
         display = 'clicked by' + str(self.name)
         return self.message_post(body=display)
 
-    _inherit = ['mail.thread', 'mail.activity.mixin']
+    _inherit = ['mail.thread', 'mail.activity.mixin','player.player']
+
+
+
+
+    @api.depends('position_number')
+    def _six_zero(self):
+        li= []
+        li.append(self.id(self.position_number == self.position_player))
+        # self.write({'player_id':[(6,0,li)]})
+        print("---------------------------",li)
 
 # @api.depends('position_number')
 # def famous_player(self):
