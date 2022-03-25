@@ -28,6 +28,9 @@
           <group>
             <field name="value2"/>
             <field name="products"/>
+          <group>
+            <field name="product_m2o"/>
+          </group>
           </group>
         </form>
       </field>
