@@ -1,0 +1,56 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <record model="ir.ui.view" id="libary.list">
+      <field name="name">libary list</field>
+      <field name="model">libary.libary</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="book_name"/>
+          <field name="genre"/>
+          <field name="author"/>
+          <field name="review"/>
+          <field name="book_id"/>
+          <field name="price"/>
+          <field name="publisher"/>
+          <field name="published_date"/>
+          <field name="binding"/>
+          <field name="language"/>
+          <field name="photo" widget="image" class="Your_custom_class"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="libary.action_window">
+      <field name="name">libary window</field>
+      <field name="res_model">libary.libary</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- server action to the one above -->
+    <record model="ir.actions.server" id="libary.action_server">
+      <field name="name">libary server</field>
+      <field name="model_id" ref="model_libary_libary"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+
+    <!-- Top menu item -->
+    <menuitem name="libary" id="libary.menu_root"/>
+    <!-- menu categories -->
+    <menuitem name="Menu 1" id="libary.menu_1" parent="libary.menu_root"/>
+    <menuitem name="Menu 2" id="libary.menu_2" parent="libary.menu_root"/>
+    <!-- actions -->
+    <menuitem name="List" id="libary.menu_1_list" parent="libary.menu_1"
+              action="libary.action_window"/>
+    <menuitem name="Server to list" id="libary" parent="libary.menu_2"
+              action="libary.action_server"/>
+  </data>
+</odoo>

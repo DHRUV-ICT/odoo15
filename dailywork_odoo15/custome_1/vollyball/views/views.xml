@@ -62,7 +62,7 @@
 
                         <group>
 <!--                            <field name="m2m"/>-->
-                            <field name="player_id"/>
+                            <field name="player_id" widget="many2many_tags"/>
                             <field name="international_player" widget="Many2one"/>
                             <field name="position_number_player" widget="Many2one"/>
                         </group>
