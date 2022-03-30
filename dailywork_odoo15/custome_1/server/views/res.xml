@@ -1,0 +1,15 @@
+<odoo>
+  <data>
+      <record model="ir.actions.server" id="res_partner_action_server">
+            <field name="name">Contacts server</field>
+            <field name="model_id" ref="model_res_partner"/>
+            <field name="binding_model_id" ref="model_res_partner"/>
+            <field name="binding_view_types">form</field>
+            <field name="state">code</field>
+            <field name="code">
+                action = record.change_value()
+            </field>
+      </record>
+
+  </data>
+</odoo>

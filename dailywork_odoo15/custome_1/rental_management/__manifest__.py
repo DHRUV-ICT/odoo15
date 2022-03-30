@@ -25,7 +25,7 @@
     'data': [
         'security/ir.model.access.csv',
         'views/product.xml',
-        'views/views.xml',
+        'views/res.xml',
         'views/templates.xml',
         'qweb/report_paper.xml',
         'qweb/report_action.xml',

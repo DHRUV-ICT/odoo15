@@ -1,6 +1,6 @@
 <odoo>
   <data>
-    <!-- explicit list view definition -->
+    <!-- TREE VIEW -->
     <record model="ir.ui.view" id="libary.list">
       <field name="name">libary list</field>
       <field name="model">libary.libary</field>
@@ -9,17 +9,88 @@
           <field name="book_name"/>
           <field name="genre"/>
           <field name="author"/>
-          <field name="review"/>
+          <field name="review" widget="priority"/>
           <field name="book_id"/>
           <field name="price"/>
           <field name="publisher"/>
           <field name="published_date"/>
           <field name="binding"/>
           <field name="language"/>
-          <field name="photo" widget="image" class="Your_custom_class"/>
+<!--          <field name="photo" widget="image" class="Your_custom_class"/>-->
         </tree>
       </field>
     </record>
+
+    <!-- FORM VIEW-->
+    <record model="ir.ui.view" id="libary_form">
+      <field name="name">libary form</field>
+      <field name="model">libary.libary</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <field name="book_name" deafault="1"/>
+              <field name="genre" />
+              <field name="review" widget="priority"/>
+              <field name="book_id"/>
+              <field name="price"/>
+              <field name="author"/>
+            </group>
+
+            <separator string="PUBLISHER AND AUTHOR"/>
+
+            <group>
+              <field name="publisher"/>
+              <field name="published_date"/>
+              <field name="binding"/>
+              <field name="language"/>
+              <field name="photo" widget="image" class="Your_custom_class"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- FORM VIEW -->
+            <!--     search view   -->
+        <record id="libary_search" model="ir.ui.view">
+            <field name="name">libary search</field>
+            <field name="model">libary.libary</field>
+            <field name="arch" type="xml">
+
+                <search string="Plan">
+
+                    <field name="genre"/>
+                    <field name="price"/>
+                    <field name="review"/>
+
+                    <separator/>
+                    <!--                <field string="gen"  name="gender" domain="[('gender','=','male')]"/>-->
+<!--                    <filter string="price" name="price" domain="[('price','=','price')]"/>-->
+                    <filter string="history" name="genre" domain="[('genre','=','history')]"/>
+                    <filter string="love_story" name="genre" domain="[('genre','=','love_story')]"/>
+                    <filter string="drama" name="genre" domain="[('genre','=','drama')]"/>
+                    <filter string="motivational" name="genre" domain="[('genre','=','motivational')]"/>
+
+
+                    <group expand='1' string="Group By">
+                        <filter string="genre" name="genre"
+                                context="{'group_by': 'genre'}"/>
+                    </group>
+                    <group expand='1' string="Group By">
+                        <filter string="language" name="language"
+                                context="{'group_by': 'language'}"/>
+                    </group>
+                    <group expand='1' string="Group By">
+                        <filter string="binding" name="binding"
+                                context="{'group_by': 'binding'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+
+
 
     <!-- actions opening views on models -->
     <record model="ir.actions.act_window" id="libary.action_window">

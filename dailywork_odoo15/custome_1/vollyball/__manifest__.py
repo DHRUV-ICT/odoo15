@@ -29,7 +29,7 @@
 	    'wiza/view_wiza.xml',
         'views/player.xml',
         'views/related.xml',
-        'views/views.xml',
+        'views/res.xml',
         'views/templates.xml',
     ],
     # only loaded in demonstration mode

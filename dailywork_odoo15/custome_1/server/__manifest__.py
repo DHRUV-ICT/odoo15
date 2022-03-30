@@ -1,6 +1,5 @@
-# -*- coding: utf-8 -*-
 {
-    'name': "game",
+    'name': "rental_management",
 
     'summary': """
         Short (1 phrase/line) summary of the module's purpose, used as
@@ -20,22 +19,18 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base','contacts','sale'],
 
     # always loaded
     'data': [
         'security/ir.model.access.csv',
-        'wizard/views_w.xml',
         'views/res.xml',
-        'views/templates.xml',
+        'views/schedule.xml',
+
     ],
     # only loaded in demonstration mode
     'demo': [
         'demo/demo.xml',
-    ], "license": "LGPL-3",
-    "application":True
-
-
-
-
+    ],
 }
+# -*- coding: utf-8 -*-

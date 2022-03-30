@@ -27,7 +27,7 @@
     # always loaded
     'data': [
         'security/ir.model.access.csv',
-        'views/views.xml',
+        'views/res.xml',
 
 	],
     'license': 'LGPL-3',

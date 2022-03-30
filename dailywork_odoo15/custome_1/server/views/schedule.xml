@@ -1,0 +1,19 @@
+<odoo>
+    <data>
+
+        <record forcecreate="True" id="ir_cron_crm_lead_assign" model="ir.cron">
+            <field name="name">CRM: Lead Assignment</field>
+            <field name="model_id" ref="model_sale_order"/>
+            <field name="state">code</field>
+            <field name="code">model.schedule_action()</field>
+<!--            <field name="active" eval="False"/>-->
+            <field name="user_id" ref="base.user_root"/>
+            <field name="interval_number">1</field>
+            <field name="interval_type">minutes</field>
+            <field name="numbercall">-1</field>
+            <field name="doall" eval="False"/>
+        </record>
+
+    </data>
+</odoo>
+
