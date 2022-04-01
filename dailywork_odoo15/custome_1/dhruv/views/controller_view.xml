@@ -1,0 +1,8 @@
+<!--<odoo>-->
+<!--    <template id="contacts_list" name="Contacts List">-->
+<!--        <t t-call="website.layout">-->
+<!--            <h1>Hello</h1>-->
+<!--        </t>-->
+<!--        &lt;!&ndash;         <h1>Hello</h1> &ndash;&gt;-->
+<!--    </template>-->
+<!--</odoo>-->

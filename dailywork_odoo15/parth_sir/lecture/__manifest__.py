@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
-
 {
-    'name': "dhruv",
+    'name': "lecture",
 
     'summary': """
         Short (1 phrase/line) summary of the module's purpose, used as
@@ -22,21 +20,17 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base','product','contacts','sale'],
+    'depends': ['base'],
 
     # always loaded
     'data': [
         'security/ir.model.access.csv',
-        # 'views/controller_view.xml',
-        'views/sale_special.xml',
         'views/views.xml',
         'views/templates.xml',
+        'views/controller_view.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
         'demo/demo.xml',
     ],
-    'license': 'LGPL-3',
-    "application": True
-
 }

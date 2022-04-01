@@ -1,0 +1,8 @@
+<odoo>
+    <template id="contacts_list" name="Contacts List">
+<!--        <t t-call="website.layout">-->
+<!--            <h1>Hello</h1>-->
+<!--        </t>-->
+                 <h1>Hello</h1>
+    </template>
+</odoo>

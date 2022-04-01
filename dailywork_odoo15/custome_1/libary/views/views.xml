@@ -1,58 +1,58 @@
 <odoo>
-  <data>
-    <!-- TREE VIEW -->
-    <record model="ir.ui.view" id="libary.list">
-      <field name="name">libary list</field>
-      <field name="model">libary.libary</field>
-      <field name="arch" type="xml">
-        <tree>
-          <field name="book_name"/>
-          <field name="genre"/>
-          <field name="author"/>
-          <field name="review" widget="priority"/>
-          <field name="book_id"/>
-          <field name="price"/>
-          <field name="publisher"/>
-          <field name="published_date"/>
-          <field name="binding"/>
-          <field name="language"/>
-<!--          <field name="photo" widget="image" class="Your_custom_class"/>-->
-        </tree>
-      </field>
-    </record>
+    <data>
+        <!-- TREE VIEW -->
+        <record model="ir.ui.view" id="libary.list">
+            <field name="name">libary list</field>
+            <field name="model">libary.libary</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="book_name"/>
+                    <field name="genre"/>
+                    <field name="author"/>
+                    <field name="review" widget="priority"/>
+                    <field name="book_id"/>
+                    <field name="price"/>
+                    <field name="publisher"/>
+                    <field name="published_date"/>
+                    <field name="binding"/>
+                    <field name="language"/>
+                    <!--          <field name="photo" widget="image" class="Your_custom_class"/>-->
+                </tree>
+            </field>
+        </record>
 
-    <!-- FORM VIEW-->
-    <record model="ir.ui.view" id="libary_form">
-      <field name="name">libary form</field>
-      <field name="model">libary.libary</field>
-      <field name="arch" type="xml">
-        <form>
-          <sheet>
-            <group>
-              <field name="book_name" deafault="1"/>
-              <field name="genre" />
-              <field name="review" widget="priority"/>
-              <field name="book_id"/>
-              <field name="price"/>
-              <field name="author"/>
-            </group>
+        <!-- FORM VIEW-->
+        <record model="ir.ui.view" id="libary_form">
+            <field name="name">libary form</field>
+            <field name="model">libary.libary</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="book_name" deafault="1"/>
+                            <field name="genre"/>
+                            <field name="review" widget="priority"/>
+                            <field name="book_id"/>
+                            <field name="price"/>
+                            <field name="author"/>
+                        </group>
 
-            <separator string="PUBLISHER AND AUTHOR"/>
+                        <separator string="PUBLISHER AND AUTHOR"/>
 
-            <group>
-              <field name="publisher"/>
-              <field name="published_date"/>
-              <field name="binding"/>
-              <field name="language"/>
-              <field name="photo" widget="image" class="Your_custom_class"/>
-            </group>
-          </sheet>
-        </form>
-      </field>
-    </record>
+                        <group>
+                            <field name="publisher"/>
+                            <field name="published_date"/>
+                            <field name="binding"/>
+                            <field name="language"/>
+                            <field name="photo" widget="image" class="Your_custom_class"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
 
-    <!-- FORM VIEW -->
-            <!--     search view   -->
+
+        <!--     search view   -->
         <record id="libary_search" model="ir.ui.view">
             <field name="name">libary search</field>
             <field name="model">libary.libary</field>
@@ -66,7 +66,7 @@
 
                     <separator/>
                     <!--                <field string="gen"  name="gender" domain="[('gender','=','male')]"/>-->
-<!--                    <filter string="price" name="price" domain="[('price','=','price')]"/>-->
+                    <!--                    <filter string="price" name="price" domain="[('price','=','price')]"/>-->
                     <filter string="history" name="genre" domain="[('genre','=','history')]"/>
                     <filter string="love_story" name="genre" domain="[('genre','=','love_story')]"/>
                     <filter string="drama" name="genre" domain="[('genre','=','drama')]"/>
@@ -90,38 +90,146 @@
         </record>
 
 
+        <!--      kanban  view-->
+        <record id="libary_kanban" model="ir.ui.view">
+            <field name="name">libary_kanban</field>
+            <field name="model">libary.libary</field>
+            <field name="arch" type="xml">
+
+                <kanban>
+                    <field name="book_name"/>
+                    <field name="genre"/>
+                    <field name="author"/>
+                    <field name="review" widget="priority"/>
+                    <field name="book_id"/>
+                    <field name="price"/>
+                    <field name="publisher"/>
+                    <field name="published_date"/>
+                    <field name="binding"/>
+                    <field name="language"/>
+<!--                    <xpath expr="/kanban/templates/field[@name='value']" position='attributes'>-->
+<!--                        <attribute name="readonly">1</attribute>-->
+<!--                    </xpath>-->
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click">
+                                <div class="oe_kanban_details">
+                                    <ul>
+                                        <li>
+                                            book_name:
+                                            <field name="book_name"/>
+                                        </li>
+
+                                        <li>
+                                            genre:
+                                            <field name="genre"/>
+                                        </li>
+
+                                        <li>
+                                            author:
+                                            <field name='author'/>
+                                        </li>
+
+                                        <li>
+                                            price:
+                                            <field name='price'/>
+                                        </li>
+                                        <li>
+                                            book_id:
+                                            <field name='book_id'/>
+                                        </li>
+                                        <li>
+                                            language:
+                                            <field name='language'/>
+                                        </li>
+
+                                    </ul>
+                                </div>
+
+                            </div>
+
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+<!--    kanban view-->
+
+<!--        <record id="view_crm_lead_kanban" model="ir.ui.view">-->
+<!--            <field name="name">libary.kanban</field>-->
+<!--            <field name="model">libary.libary</field>-->
+<!--            <field name="priority" eval="100"/>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <kanban>-->
+<!--                   <field name="book_name"/>-->
+<!--                    <field name="genre"/>-->
+<!--                    <field name="author"/>-->
+<!--                    <field name="review" widget="priority"/>-->
+<!--                    <field name="book_id"/>-->
+<!--                    <field name="price"/>-->
+<!--                    <field name="publisher"/>-->
+<!--                    <field name="published_date"/>-->
+<!--                    <field name="binding"/>-->
+<!--                    <field name="language"/>-->
+
+<!--                    <templates>-->
+<!--                        <t t-name="kanban-box">-->
+<!--                            <div>-->
+<!--                                <div>-->
+<!--                                    <span ><field name="book_name"/></span>-->
+<!--                                </div>-->
+<!--                                <div>-->
+<!--                                  <field name="book_id"/>-->
+<!--                                </div>-->
+<!--                                <div >-->
+<!--                                    <div >-->
+<!--                                        <field name="price"/>-->
+<!--                                        <div >-->
+<!--                                            <field name="photo" widget="image"/>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <div >-->
+<!--                                        <field name="review" widget="priority"/>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </t>-->
+<!--                    </templates>-->
+<!--                </kanban>-->
+<!--            </field>-->
+<!--        </record>-->
 
 
-    <!-- actions opening views on models -->
-    <record model="ir.actions.act_window" id="libary.action_window">
-      <field name="name">libary window</field>
-      <field name="res_model">libary.libary</field>
-      <field name="view_mode">tree,form</field>
-    </record>
+        <!-- actions opening views on models -->
+        <record model="ir.actions.act_window" id="libary.action_window">
+            <field name="name">libary window</field>
+            <field name="res_model">libary.libary</field>
+            <field name="view_mode">tree,form</field>
+        </record>
 
-    <!-- server action to the one above -->
-    <record model="ir.actions.server" id="libary.action_server">
-      <field name="name">libary server</field>
-      <field name="model_id" ref="model_libary_libary"/>
-      <field name="state">code</field>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "tree,form",
-          "res_model": model._name,
-        }
-      </field>
-    </record>
+        <!-- server action to the one above -->
+        <record model="ir.actions.server" id="libary.action_server">
+            <field name="name">libary server</field>
+            <field name="model_id" ref="model_libary_libary"/>
+            <field name="state">code</field>
+            <field name="code">
+                action = {
+                "type": "ir.actions.act_window",
+                "view_mode": "tree,form",
+                "res_model": model._name,
+                }
+            </field>
+        </record>
 
-    <!-- Top menu item -->
-    <menuitem name="libary" id="libary.menu_root"/>
-    <!-- menu categories -->
-    <menuitem name="Menu 1" id="libary.menu_1" parent="libary.menu_root"/>
-    <menuitem name="Menu 2" id="libary.menu_2" parent="libary.menu_root"/>
-    <!-- actions -->
-    <menuitem name="List" id="libary.menu_1_list" parent="libary.menu_1"
-              action="libary.action_window"/>
-    <menuitem name="Server to list" id="libary" parent="libary.menu_2"
-              action="libary.action_server"/>
-  </data>
+        <!-- Top menu item -->
+        <menuitem name="libary" id="libary.menu_root"/>
+        <!-- menu categories -->
+        <menuitem name="Menu 1" id="libary.menu_1" parent="libary.menu_root"/>
+        <menuitem name="Menu 2" id="libary.menu_2" parent="libary.menu_root"/>
+        <!-- actions -->
+        <menuitem name="List" id="libary.menu_1_list" parent="libary.menu_1"
+                  action="libary.action_window"/>
+        <menuitem name="Server to list" id="libary" parent="libary.menu_2"
+                  action="libary.action_server"/>
+    </data>
 </odoo>
