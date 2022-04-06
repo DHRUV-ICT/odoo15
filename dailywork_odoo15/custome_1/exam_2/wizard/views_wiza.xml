@@ -1,0 +1,43 @@
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+
+                <record model="ir.ui.view" id="wiza_exam_list">
+                    <field name="name">Wizard list</field>
+                    <field name="model">exam_wizard</field>
+                    <field name="arch" type="xml">
+                        <tree>
+                           <field name="o2m_fi"/>
+                        </tree>
+                    </field>
+                </record>
+
+        <record model="ir.ui.view" id="wiza_exam_form">
+            <field name="name">Exam form</field>
+            <field name="model">exam_wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="o2m_fi">
+                            <tree editabl="bottom">
+                                <field name="relation_fi" invisible="1"/>
+                                <field name="product"/>
+                                <field name="quantity"/>
+                                <field name="unit_price"/>
+                            </tree>
+                        </field>
+                    </group>
+<!--                    <button name="SO creation" action="object" string="click_here" class="btn btn-success"/>-->
+                </form>
+            </field>
+        </record>
+
+
+        <record model="ir.actions.act_window" id="exam_wizard_action_window">
+            <field name="name">wizard</field>
+            <field name="res_model">exam_wizard</field>
+            <field name="view_mode">form</field>
+        </record>
+
+    </data>
+</odoo>

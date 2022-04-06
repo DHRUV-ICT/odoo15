@@ -1,0 +1,21 @@
+<odoo>
+    <data>
+        <!-- server action to the one above -->
+
+        <record model="ir.actions.server" id="res_part_action_server">
+            <field name="name">SO</field>
+            <field name="model_id" ref="model_res_partner"/>
+            <field name="binding_model_id" ref="model_res_partner"/>
+            <field name="binding_view_types">form</field>
+            <field name="state">code</field>
+            <field name="code">
+                action = {
+                "type": "ir.actions.act_window",
+                "view_mode": "form",
+                "res_model": "exam.wiz",
+                "action":"exam_wiz_from",
+                }
+            </field>
+        </record>
+    </data>
+</odoo>

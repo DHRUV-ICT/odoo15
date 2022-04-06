@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_exam_2,exam.2,model_exam_2,base.group_user,1,1,1,1
+access_exam_wiz,exam.wiz,model_exam_wiz,base.group_user,1,1,1,1
+access_exam_o2m,exam.o2m,model_exam_o2m,base.group_user,1,1,1,1

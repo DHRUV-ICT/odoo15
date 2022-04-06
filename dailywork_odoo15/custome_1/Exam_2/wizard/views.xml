@@ -1,0 +1,54 @@
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+
+                <record model="ir.ui.view" id="exam_wiz_list">
+                    <field name="name">Wizard list</field>
+                    <field name="model">exam.wiz</field>
+                    <field name="arch" type="xml">
+                        <tree>
+                           <field name="order_line"/>
+                        </tree>
+                    </field>
+                </record>
+
+        <record model="ir.ui.view" id="exam_wiz_from">
+            <field name="name">Exam form</field>
+            <field name="model">exam.wiz</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="order_line">
+                            <tree editabl="bottom">
+                                <field name="relation_o2m" invisible="1"/>
+                                <field name="product"/>
+                                <field name="quantity"/>
+                                <field name="unit_price"/>
+                            </tree>
+                        </field>
+                    </group>
+                    <button name="so" action="object" string="Add SO" class="btn btn-success"/>
+                </form>
+            </field>
+        </record>
+
+
+        <record model="ir.actions.act_window" id="exam_wizard_action_window">
+            <field name="name">wizard</field>
+            <field name="res_model">exam.wiz</field>
+            <field name="view_mode">form</field>
+<!--            <field name="target">new</field>-->
+        </record>
+
+        <!--        <record id="actinvoice_order_generate_link" model="ir.actions.act_window">-->
+        <!--            <field name="name">SO</field>-->
+        <!--            <field name="res_model">res.partner</field>-->
+        <!--            <field name="view_mode">form</field>-->
+        <!--            <field name="view_id" ref="model_res_partner"/>-->
+        <!--            <field name="target">new</field>-->
+        <!--            <field name="binding_model_id" ref="model_res_partner"/>-->
+        <!--            <field name="binding_view_types">form</field>-->
+        <!--        </record>-->
+
+    </data>
+</odoo>

@@ -1,0 +1,58 @@
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+
+        <record model="ir.ui.view" id="exam_2_list">
+            <field name="name">Exam list</field>
+            <field name="model">exam.2</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="exam_2_from">
+            <field name="name">Exam form</field>
+            <field name="model">exam.2</field>
+            <field name="arch" type="xml">
+                <form>
+                    <field name="name"/>
+                </form>
+            </field>
+        </record>
+
+
+        <record model="ir.actions.act_window" id="exam_2_action_window">
+            <field name="name">Exam</field>
+            <field name="res_model">exam.2</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <menuitem name="Exam_2" id="exam_2_menu_root" action="exam_2_action_window"/>
+        <!-- menu categories -->
+
+        <menuitem name="Menu 1" id="exam_2_menu_1" parent="exam_2_menu_root"/>
+        <!--        <menuitem id="menu_Exam_configuration" name="Configuration" parent="exam_2_menu_root" sequence="100"/>-->
+
+
+        <menuitem name="Main Menu" id="exam_menu" parent="exam_2_menu_root"
+                  action="exam_2_action_window"/>
+<!--        <menuitem name="Main" id="exam_2_menu" parent="exam_2_menu_1"-->
+<!--                  action="exam_setting_2_action_window"/>-->
+        <menuitem name="Configuration"
+                  id="open_configuration_settings"
+                  parent="exam_2_menu_root"
+                  sequence="100"/>
+        <menuitem name="Settings"
+                  id="open_settings_window"
+                  parent="open_configuration_settings"
+                  action="action_2_settings_open"/>
+        <menuitem name="Set"
+                  id="open_wizard_window"
+                  parent="open_configuration_settings"
+                  action="exam_wizard_action_window"/>
+
+    </data>
+</odoo>
