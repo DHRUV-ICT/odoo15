@@ -7,4 +7,3 @@ class res(models.Model):
 
     def change_value(self):
         pass
-

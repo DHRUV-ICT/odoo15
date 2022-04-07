@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 {
     'name': "exam_2",
 
@@ -21,14 +20,14 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'contacts'],
+    'depends': ['base', 'sale_management','contacts'],
 
     # always loaded
     'data': [
         'security/ir.model.access.csv',
         'wizard/views_wiza.xml',
-        'views/task_3.xml',
         'views/setting.xml',
+        'views/task_3.xml',
         'views/age_calculator.xml',
         'views/views.xml',
 
@@ -37,3 +36,4 @@
     'license': 'LGPL-3'
     , 'application': True
 }
+# -*- coding: utf-8 -*-

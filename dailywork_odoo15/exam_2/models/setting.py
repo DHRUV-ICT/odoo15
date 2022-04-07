@@ -32,3 +32,29 @@ class ResConfiSetting(models.TransientModel):
         return res
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

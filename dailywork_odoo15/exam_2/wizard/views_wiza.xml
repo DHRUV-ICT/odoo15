@@ -4,7 +4,7 @@
 
                 <record model="ir.ui.view" id="wiza_exam_list">
                     <field name="name">Wizard list</field>
-                    <field name="model">exam_wizard</field>
+                    <field name="model">exam.wizard</field>
                     <field name="arch" type="xml">
                         <tree>
                            <field name="o2m_fi"/>
@@ -14,7 +14,7 @@
 
         <record model="ir.ui.view" id="wiza_exam_form">
             <field name="name">Exam form</field>
-            <field name="model">exam_wizard</field>
+            <field name="model">exam.wizard</field>
             <field name="arch" type="xml">
                 <form>
                     <group>
@@ -35,7 +35,7 @@
 
         <record model="ir.actions.act_window" id="exam_wizard_action_window">
             <field name="name">wizard</field>
-            <field name="res_model">exam_wizard</field>
+            <field name="res_model">exam.wizard</field>
             <field name="view_mode">form</field>
         </record>
 
