@@ -20,11 +20,12 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base','contacts'],
 
     # always loaded
     'data': [
         'security/ir.model.access.csv',
+        'views/web_demo.xml',
         'views/views.xml',
         'views/templates.xml',
         'views/controller_view.xml',

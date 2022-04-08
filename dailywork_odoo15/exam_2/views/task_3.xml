@@ -10,7 +10,10 @@
 
                  action = { "type": "ir.actions.act_window", "view_mode": "form",
                 "res_model": "exam.wizard",
-                "action":"exam_wizard_action_window", }
+                "action":"exam_wizard_action_window",
+                "target":'new',
+                "context":{'active_ids':records.ids}}
+
 
             </field>
       </record>

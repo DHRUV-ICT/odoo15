@@ -1,0 +1,61 @@
+<odoo>
+    <template id="webdemo" name="data">
+        <t t-call="website.layout">
+            <t t-set="title">Contact Details</t>
+            <!--            <t t-foreach="contacts" t-as="contact">-->
+            <table border="1" align="center" class="table table-striped">
+                <thead>
+                    <tr class="danger">
+                        <td>
+                            <b>name</b>
+                        </td>
+                        <td>
+                            <b>phone</b>
+                        </td>
+                        <td>
+                            <b>email</b>
+                        </td>
+                        <td>
+                            <b>languange</b>
+                        </td>
+                        <td>
+                            <b>Goto Contact</b>
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <t t-foreach="contacts" t-as="contact">
+                        <tr>
+                            <td>
+                                <t t-esc="contact.name"/>
+                            </td>
+                            <td>
+                                <t t-esc="contact.phone"/>
+                            </td>
+                            <td>
+                                <t t-esc="contact.email"/>
+                            </td>
+                            <td>
+                                <t t-esc="contact.lang"/>
+                            </td>
+                            <td>
+                                <a t-attf-href="/contacts/{{slug(contact)}}">click here</a>
+                            </td>
+                        </tr>
+                    </t>
+                </tbody>
+            </table>
+        </t>
+    </template>
+
+
+    <template id="dis_contact" name="data">
+        <t t-call="website.layout">
+            <t t-set="title">Contact Page</t>
+            <h1 align="center">get contact</h1>
+            Name: <t t-esc="details.name"/><br/>
+            Phone: <t t-esc="details.phone"/><br/>
+            Email: <t t-esc="details.email"/><br/>
+        </t>
+    </template>
+</odoo>

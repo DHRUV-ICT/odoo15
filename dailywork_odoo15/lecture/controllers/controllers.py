@@ -1,4 +1,3 @@
-
 # -*- coding: utf-8 -*-
 from odoo import http, _
 from odoo.http import request
@@ -10,6 +9,14 @@ class Website(http.Controller):
         contacts = request.env['res.partner'].sudo().search([])
         return request.render(
             "lecture.contacts_list", {})
+
+
+    @http.route(['/contacts/<model("res.partner"):con>'], auth='public', type='http', website=True)
+    def display_contacts(self, con):
+        print('&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&', con)
+        return request.render('lecture.dis_contact', {
+            'details': con,
+        })
 
 # class Lecture(http.Controller):
 #     @http.route('/lecture/lecture', auth='public')

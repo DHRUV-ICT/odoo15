@@ -2,15 +2,15 @@
     <data>
         <!-- explicit list view definition -->
 
-                <record model="ir.ui.view" id="wiza_exam_list">
-                    <field name="name">Wizard list</field>
-                    <field name="model">exam.wizard</field>
-                    <field name="arch" type="xml">
-                        <tree>
-                           <field name="o2m_fi"/>
-                        </tree>
-                    </field>
-                </record>
+<!--                <record model="ir.ui.view" id="wiza_exam_list">-->
+<!--                    <field name="name">Wizard list</field>-->
+<!--                    <field name="model">exam.wizard</field>-->
+<!--                    <field name="arch" type="xml">-->
+<!--                        <tree>-->
+<!--&lt;!&ndash;                           <field name="o2m_fi"/>&ndash;&gt;-->
+<!--                        </tree>-->
+<!--                    </field>-->
+<!--                </record>-->
 
         <record model="ir.ui.view" id="wiza_exam_form">
             <field name="name">Exam form</field>
@@ -19,15 +19,16 @@
                 <form>
                     <group>
                         <field name="o2m_fi">
-                            <tree editabl="bottom">
-                                <field name="relation_fi" invisible="1"/>
+                            <tree editable="bottom">
                                 <field name="product"/>
                                 <field name="quantity"/>
                                 <field name="unit_price"/>
                             </tree>
                         </field>
                     </group>
-<!--                    <button name="SO creation" action="object" string="click_here" class="btn btn-success"/>-->
+                    <footer>
+                        <button name="so_create" type="object" string="crate_so" class="btn btn-success"/>
+                    </footer>
                 </form>
             </field>
         </record>
@@ -37,6 +38,7 @@
             <field name="name">wizard</field>
             <field name="res_model">exam.wizard</field>
             <field name="view_mode">form</field>
+            <field name="target">new</field>
         </record>
 
     </data>
