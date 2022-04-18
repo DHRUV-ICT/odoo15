@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 {
     'name': "vollyball",
 
@@ -20,22 +19,24 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base','mail'],
+    'depends': ['base', 'mail'],
 
     # always loaded
     'data': [
         'security/ir.model.access.csv',
-	    'views/res_part.xml',
-	    'wiza/view_wiza.xml',
+        'data/email.xml',
+        'wiza/view_wiza.xml',
+        'views/res_part.xml',
         'views/player.xml',
         'views/related.xml',
-        'views/res.xml',
         'views/templates.xml',
+        'views/views.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
-        'demo/demo.xml',
-    ],    "license": "LGPL-3",
+       'demo/demo.xml',
+    ], "license": "LGPL-3",
     "application": True
 
 }
+# -*- coding: utf-8 -*-

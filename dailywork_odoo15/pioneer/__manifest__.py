@@ -1,5 +1,6 @@
+# -*- coding: utf-8 -*-
 {
-    'name': "rental_management",
+    'name': "pioneer",
 
     'summary': """
         Short (1 phrase/line) summary of the module's purpose, used as
@@ -19,21 +20,18 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base','account'],
 
     # always loaded
     'data': [
         'security/ir.model.access.csv',
-        'views/product.xml',
+        'views/server_action.xml',
+        'views/invoice_add.xml',
         'views/views.xml',
         'views/templates.xml',
-        'qweb/report_paper.xml',
-        'qweb/report_action.xml',
-        'qweb/report_templates.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
         'demo/demo.xml',
     ],
 }
-# -*- coding: utf-8 -*-

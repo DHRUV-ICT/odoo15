@@ -19,6 +19,7 @@ class vollyball(models.Model):
     gender = fields.Selection([('male', 'male'), ('female', 'female')], tracking=True)
     spiker = fields.Boolean(tracking=True)
     height = fields.Integer()
+    email = fields.Char()
 
     """this is status bar """
     status = fields.Selection([('a', 'player_name'), ('b', 'info'), ('c', "world's player")]
@@ -83,7 +84,9 @@ class vollyball(models.Model):
         display = 'clicked by' + str(self.name)
         return self.message_post(body=display)
 
-
+    def send_email(self):
+        template_id = self.env.ref("vollyball.send_email").id
+        self.env['mail.template'].browse(template_id).send_mail(self.id, force_send=True)
     #
     # @api.depends('position_number')
     # def _six_zero(self):

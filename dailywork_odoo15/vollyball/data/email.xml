@@ -1,0 +1,32 @@
+<odoo>
+    <data>
+
+        <record id="send_email" model="mail.template">
+            <field name="name">players details</field>
+            <field name="model_id" ref="vollyball.model_vollyball_vollyball"/>
+            <field name="email_from">{{user.email_formatted}}</field>
+            <field name="email_to">{{object.email}}</field>
+            <field name="subject">player Details</field>
+            <field name="body_html" type="html">
+                <div syle="margin: 0px; padding: 0px;">
+                    <p style="font-size: 15px;">
+                        Dear
+                        <b>
+                            <t t-esc="object.name"/>
+                        </b>
+                        The Book That You Have Order
+                        <b>
+                            <t t-esc="object.position"/>
+                        </b>
+
+                        Rating
+                        <b>
+                            <t t-esc="object.description"/>
+                        </b>
+                        <br>Thank You</br>
+                    </p>
+                </div>
+            </field>
+        </record>
+    </data>
+</odoo>

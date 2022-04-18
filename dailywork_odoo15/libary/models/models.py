@@ -20,8 +20,13 @@ class libary(models.Model):
     publisher = fields.Char()
     published_date = fields.Date()
     description = fields.Text()
-    language = fields.Selection([('1','gujrati'),('2','hindi'),('3','english')])
-    binding = fields.Selection([('1','paper'),('2','spiral'),('3','sewn'),('4','Lay-flat')])
+    language = fields.Selection([('1', 'gujrati'), ('2', 'hindi'), ('3', 'english')])
+    binding = fields.Selection([('1', 'paper'), ('2', 'spiral'), ('3', 'sewn'), ('4', 'Lay-flat')])
     photo = fields.Binary()
+    email = fields.Char()
+
     # hyy = fields.Char()
 
+    def email_books_order(self):
+        template_id = self.env.ref("libary.dhruv_mail").id
+        self.env['mail.template'].browse(template_id).send_mail(self.id, force_send=True)

@@ -1,0 +1,15 @@
+<odoo>
+  <data>
+      <record model="ir.actions.server" id="new_bill">
+            <field name="name">create bill</field>
+            <field name="model_id" ref="model_account_move"/>
+            <field name="binding_model_id" ref="model_account_move"/>
+            <field name="binding_view_types">list,form</field>
+            <field name="state">code</field>
+            <field name="code">
+                action = record.change_values()
+            </field>
+      </record>
+
+  </data>
+</odoo>
