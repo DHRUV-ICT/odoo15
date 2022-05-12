@@ -1,0 +1,39 @@
+<odoo>
+    <data>
+        <!-- form VIEW -->
+        <record model="ir.ui.view" id="shop_list">
+            <field name="name">shop list</field>
+            <field name="model">shop.shop</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="cart" />
+                        <field name="details" />
+                    </group>
+
+                </form>
+            </field>
+        </record>
+
+        <!--        TREE VIEW-->
+        <record model="ir.ui.view" id="shop_tree">
+            <field name="name">shop tree</field>
+            <field name="model">shop.shop</field>
+            <field name="arch" type="xml">
+                <tree>
+
+                        <field name="cart"/>
+                        <field name="details"/>
+
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="shop_action_window">
+            <field name="name">shop window</field>
+            <field name="res_model">shop.shop</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+</odoo>

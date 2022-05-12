@@ -31,6 +31,8 @@
         'qweb/report_action.xml',
         'qweb/report_templates.xml',
     ],
+    'installable': True,
+
     # only loaded in demonstration mode
     'demo': [
         'demo/demo.xml',

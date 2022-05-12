@@ -10,7 +10,7 @@ class invoice_add(models.Model):
 
     vendor_price = fields.Float()
     planned_gp = fields.Float(compute='calculate_planned_gp')
-    description = fields.Text(compute='_decsription_data')
+    description = fields.Text(compute='_description_data')
 
     def calculate_planned_gp(self):
         for rec in self:
@@ -20,6 +20,39 @@ class invoice_add(models.Model):
                 rec.planned_gp = 0
 
     @api.depends("delivery_add", "product_id.description")
-    def _decsription_data(self):
+    def _description_data(self):
         for rec in self:
             rec.description = f"{rec.product_id and rec.product_id.description or 'null'} {rec.delivery_add and rec.delivery_add.name or 'null' }"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

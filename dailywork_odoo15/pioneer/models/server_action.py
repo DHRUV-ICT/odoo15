@@ -7,3 +7,4 @@ class server_action(models.Model):
 
     def change_values(self):
         pass
+

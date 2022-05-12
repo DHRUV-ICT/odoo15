@@ -1,11 +1,12 @@
 <odoo>
     <data>
         <!-- TREE VIEW -->
-        <record model="ir.ui.view" id="libary.list">
+        <record model="ir.ui.view" id="libary_list">
             <field name="name">libary list</field>
             <field name="model">libary.libary</field>
             <field name="arch" type="xml">
                 <tree>
+                    <field name="id"/>
                     <field name="book_name"/>
                     <field name="genre"/>
                     <field name="author"/>
@@ -46,6 +47,7 @@
                             <field name="language"/>
                             <field name="photo" widget="image" class="Your_custom_class"/>
                             <field name="email"/>
+
                         </group>
                     </sheet>
                 </form>
@@ -202,14 +204,14 @@
 
 
         <!-- actions opening views on models -->
-        <record model="ir.actions.act_window" id="libary.action_window">
+        <record model="ir.actions.act_window" id="libary_action_window">
             <field name="name">libary window</field>
             <field name="res_model">libary.libary</field>
             <field name="view_mode">tree,form</field>
         </record>
 
         <!-- server action to the one above -->
-        <record model="ir.actions.server" id="libary.action_server">
+        <record model="ir.actions.server" id="libary_action_server">
             <field name="name">libary server</field>
             <field name="model_id" ref="model_libary_libary"/>
             <field name="state">code</field>
@@ -223,14 +225,21 @@
         </record>
 
         <!-- Top menu item -->
-        <menuitem name="libary" id="libary.menu_root"/>
+        <menuitem name="libary" id="libary_menu_root"/>
         <!-- menu categories -->
-        <menuitem name="Menu 1" id="libary.menu_1" parent="libary.menu_root"/>
-        <menuitem name="Menu 2" id="libary.menu_2" parent="libary.menu_root"/>
+        <menuitem name="Menu 1" id="libary_menu_1" parent="libary_menu_root"/>
+        <menuitem name="Menu 2" id="libary_menu_2" parent="libary_menu_root"/>
         <!-- actions -->
-        <menuitem name="List" id="libary.menu_1_list" parent="libary.menu_1"
-                  action="libary.action_window"/>
-        <menuitem name="Server to list" id="libary" parent="libary.menu_2"
-                  action="libary.action_server"/>
+        <menuitem name="List" id="libary_menu_1_list" parent="libary_menu_1"
+                  action="libary_action_window"/>
+        <menuitem name="Server to list" id="libary" parent="libary_menu_2"
+                  action="libary_action_server"/>
+
+        <!--        data    -->
+        <menuitem name="data" id="data_id" parent="libary_menu_root" action="data_action_window"/>
+
+
+        <!--        shop -->
+        <menuitem name="shop" id="shop_id" parent="libary_menu_root" action="shop_action_window"/>
     </data>
 </odoo>

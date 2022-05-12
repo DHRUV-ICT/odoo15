@@ -1,0 +1,44 @@
+<odoo>
+    <data>
+        <!-- form VIEW -->
+        <record model="ir.ui.view" id="data_list">
+            <field name="name">data list</field>
+            <field name="model">data.data</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="type"/>
+                        <field name="book" options="{'no_create':True , 'no_create_edit':True , 'no_open':True }"/>
+                        <field name="price"/>
+                        <field name="author"/>
+                        <field name="total" readonly="1" attrs="{'invisible': [['price', '=', 0]]}" force_save="1"/>
+                    </group>
+
+                </form>
+            </field>
+        </record>
+
+        <!--        TREE VIEW-->
+        <record model="ir.ui.view" id="data_tree">
+            <field name="name">data tree</field>
+            <field name="model">data.data</field>
+            <field name="arch" type="xml">
+                <tree>
+                        <field name="id"/>
+                        <field name="book"/>
+                        <field name="price"/>
+                        <field name="author"/>
+                        <field name="total" />
+
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="data_action_window">
+            <field name="name">data window</field>
+            <field name="res_model">data.data</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+</odoo>
