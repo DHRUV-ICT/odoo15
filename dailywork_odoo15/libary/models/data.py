@@ -1,7 +1,5 @@
 from odoo import models, fields, api
 
-
-
 class data(models.Model):
 
     _name = 'data.data'

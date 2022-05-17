@@ -4,11 +4,14 @@ from odoo import models, fields, api
 from odoo.exceptions import ValidationError
 
 
+
+
 class libary(models.Model):
 
     _name = 'libary.libary'
     _description = 'libary.libary'
     _rec_name = 'book_name'
+    _inherit = 'hr.contract'
 
     book_name = fields.Char()
     genre = fields.Selection([('0', 'love_story'), ('1', 'history'),
@@ -49,7 +52,7 @@ class libary(models.Model):
 
     def write(self,values):
         record_w = super(libary,self).write(values)
-        print('WWWWWRRRRR@@@@@@@@@@@##@@@@@@@@@@@#@@@@@@@@@@@@@$@@@@@@@@@@@@@@')
+        print('WWWWWRRRRR@@@@@@@@@@@##@@@@@@@@@@@#@@@@@  @@@@@@@@$@@@@@@@@@@@@@@')
         return record_w
 
     def unlink(self):
@@ -75,3 +78,5 @@ class libary(models.Model):
 
     _sql_constraints = [ ('book_name', 'unique(book_name)' , 'book name must not be same')]
 
+    def upload_file(self):
+        pass

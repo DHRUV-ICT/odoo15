@@ -1,53 +1,53 @@
-<!--<odoo>-->
-<!--    <data>-->
-<!--        &lt;!&ndash; explicit list view definition &ndash;&gt;-->
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
 
-<!--&lt;!&ndash;        &lt;!&ndash;  tree view&ndash;&gt;&ndash;&gt;-->
-<!--&lt;!&ndash;        <record model="ir.ui.view" id="dhruv_list">&ndash;&gt;-->
-<!--&lt;!&ndash;            <field name="name">dhruv list</field>&ndash;&gt;-->
-<!--&lt;!&ndash;            <field name="model">dhruv.dhruv</field>&ndash;&gt;-->
-<!--&lt;!&ndash;            <field name="arch" type="xml">&ndash;&gt;-->
-<!--&lt;!&ndash;                <tree>&ndash;&gt;-->
-<!--&lt;!&ndash;                    <field name="email"/>&ndash;&gt;-->
-<!--&lt;!&ndash;                    <field name="mobile"/>&ndash;&gt;-->
-<!--&lt;!&ndash;                    &lt;!&ndash;          <field name="date"/>&ndash;&gt;&ndash;&gt;-->
-
-<!--&lt;!&ndash;                </tree>&ndash;&gt;-->
-<!--&lt;!&ndash;            </field>&ndash;&gt;-->
-<!--&lt;!&ndash;        </record>&ndash;&gt;-->
-
-<!--        &lt;!&ndash;form view &ndash;&gt;-->
-<!--        <record model="ir.ui.view" id="inheri_form">-->
-<!--            <field name="name">inheri</field>-->
-<!--            <field name="model">inheri</field>-->
-<!--            <field name="inherit_id" ref="product.product_template_only_form_view"/>-->
+<!--        &lt;!&ndash;  tree view&ndash;&gt;-->
+<!--        <record model="ir.ui.view" id="dhruv_list">-->
+<!--            <field name="name">dhruv list</field>-->
+<!--            <field name="model">dhruv.dhruv</field>-->
 <!--            <field name="arch" type="xml">-->
-<!--                <form>-->
-<!--                    <group>-->
-<!--                      <notebook>-->
+<!--                <tree>-->
+<!--                    <field name="email"/>-->
+<!--                    <field name="mobile"/>-->
+<!--                    &lt;!&ndash;          <field name="date"/>&ndash;&gt;-->
 
-<!--                        <xpath expr="//page[@name='sales']" position="after">-->
-<!--                          <page string="Rental">-->
-<!--                            <group>-->
-<!--                              <field name="email"/>-->
-<!--                              <field name="mobile"/>-->
-<!--                            </group>-->
-<!--                          </page>-->
-<!--                        </xpath>-->
-<!--                      </notebook>-->
-
-<!--                    </group>-->
-<!--                </form>-->
+<!--                </tree>-->
 <!--            </field>-->
 <!--        </record>-->
 
-<!--        &lt;!&ndash; actions opening views on models &ndash;&gt;-->
+        <!--form view -->
+        <record model="ir.ui.view" id="inheri_form">
+            <field name="name">inheri</field>
+            <field name="model">inheri</field>
+            <field name="inherit_id" ref="product.product_template_only_form_view"/>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                      <notebook>
 
-<!--        <record model="ir.actions.act_window" id="inher_action_window">-->
-<!--            <field name="name">inherit window</field>-->
-<!--            <field name="res_model">inherit_id</field>-->
-<!--            <field name="view_mode">tree,form</field>-->
-<!--        </record>-->
+                        <xpath expr="//page[@name='sales']" position="after">
+                          <page string="Rental">
+                            <group>
+                              <field name="email"/>
+                              <field name="mobile"/>
+                            </group>
+                          </page>
+                        </xpath>
+                      </notebook>
 
-<!--    </data>-->
-<!--</odoo>-->
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <!-- actions opening views on models -->
+
+        <record model="ir.actions.act_window" id="inher_action_window">
+            <field name="name">inherit window</field>
+            <field name="res_model">inherit_id</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+</odoo>

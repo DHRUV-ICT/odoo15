@@ -30,6 +30,7 @@
             </t>
         </t>
     </template>
+
     <template id="report_rental_reference">
         <t t-call="web.html_container">
             <t t-foreach="docs" t-as="doc">

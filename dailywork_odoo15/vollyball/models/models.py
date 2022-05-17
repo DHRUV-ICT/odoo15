@@ -8,8 +8,9 @@ class vollyball(models.Model):
     _inherit = ['mail.thread', 'mail.activity.mixin','player.player']
     """ for show speciality not object"""
 
-    _rec_name = 'international_player'
     _description = 'vollyball.vollyball'
+
+    _rec_name = 'name'
 
     position_number = fields.Integer(tracking=True)
     name = fields.Char(default="player name", tracking=True)

@@ -22,10 +22,24 @@
             </field>
         </record>
 
+
+<!--        &lt;!&ndash;        inherit view&ndash;&gt;-->
+<!--        <record model="ir.ui.view" id="inherit_list">-->
+<!--            <field name="name">inherit list</field>-->
+<!--            <field name="model">libary.libary</field>-->
+<!--            <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <field name="hr_responsible_id" position="after"/>-->
+<!--                    <field name="book_name"/>-->
+<!--                  <button name="upload_file" string="files" type="object"/>-->
+<!--            </field>-->
+<!--        </record>-->
+
         <!-- FORM VIEW-->
         <record model="ir.ui.view" id="libary_form">
             <field name="name">libary form</field>
             <field name="model">libary.libary</field>
+
             <field name="arch" type="xml">
                 <form>
                     <sheet>
@@ -110,9 +124,7 @@
                     <field name="published_date"/>
                     <field name="binding"/>
                     <field name="language"/>
-                    <!--                    <xpath expr="/kanban/templates/field[@name='value']" position='attributes'>-->
-                    <!--                        <attribute name="readonly">1</attribute>-->
-                    <!--                    </xpath>-->
+
                     <templates>
                         <t t-name="kanban-box">
                             <div t-attf-class="oe_kanban_global_click">
@@ -156,51 +168,53 @@
                 </kanban>
             </field>
         </record>
-        <!--    kanban view-->
+        kanban view
 
-        <!--        <record id="view_crm_lead_kanban" model="ir.ui.view">-->
-        <!--            <field name="name">libary.kanban</field>-->
-        <!--            <field name="model">libary.libary</field>-->
-        <!--            <field name="priority" eval="100"/>-->
-        <!--            <field name="arch" type="xml">-->
-        <!--                <kanban>-->
-        <!--                   <field name="book_name"/>-->
-        <!--                    <field name="genre"/>-->
-        <!--                    <field name="author"/>-->
-        <!--                    <field name="review" widget="priority"/>-->
-        <!--                    <field name="book_id"/>-->
-        <!--                    <field name="price"/>-->
-        <!--                    <field name="publisher"/>-->
-        <!--                    <field name="published_date"/>-->
-        <!--                    <field name="binding"/>-->
-        <!--                    <field name="language"/>-->
+        <record id="view_crm_lead_kanban" model="ir.ui.view">
+            <field name="name">libary.kanban</field>
+            <field name="model">libary.libary</field>
+            <field name="priority" eval="100"/>
+            <field name="arch" type="xml">
+                <kanban>
+                    <field name="book_name"/>
+                    <field name="genre"/>
+                    <field name="author"/>
+                    <field name="review" widget="priority"/>
+                    <field name="book_id"/>
+                    <field name="price"/>
+                    <field name="publisher"/>
+                    <field name="published_date"/>
+                    <field name="binding"/>
+                    <field name="language"/>
 
-        <!--                    <templates>-->
-        <!--                        <t t-name="kanban-box">-->
-        <!--                            <div>-->
-        <!--                                <div>-->
-        <!--                                    <span ><field name="book_name"/></span>-->
-        <!--                                </div>-->
-        <!--                                <div>-->
-        <!--                                  <field name="book_id"/>-->
-        <!--                                </div>-->
-        <!--                                <div >-->
-        <!--                                    <div >-->
-        <!--                                        <field name="price"/>-->
-        <!--                                        <div >-->
-        <!--                                            <field name="photo" widget="image"/>-->
-        <!--                                        </div>-->
-        <!--                                    </div>-->
-        <!--                                    <div >-->
-        <!--                                        <field name="review" widget="priority"/>-->
-        <!--                                    </div>-->
-        <!--                                </div>-->
-        <!--                            </div>-->
-        <!--                        </t>-->
-        <!--                    </templates>-->
-        <!--                </kanban>-->
-        <!--            </field>-->
-        <!--        </record>-->
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div>
+                                <div>
+                                    <span>
+                                        <field name="book_name"/>
+                                    </span>
+                                </div>
+                                <div>
+                                    <field name="book_id"/>
+                                </div>
+                                <div>
+                                    <div>
+                                        <field name="price"/>
+                                        <div>
+                                            <field name="photo" widget="image"/>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <field name="review" widget="priority"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
 
 
         <!-- actions opening views on models -->

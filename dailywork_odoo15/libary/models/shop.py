@@ -11,5 +11,6 @@ class shop(models.Model):
 
     @api.depends('cart')
     def m2m(self):
-        ids = [15,16,17]
+        ids = [23,24]
         self.write({'cart':[(6,0,ids)]})
+

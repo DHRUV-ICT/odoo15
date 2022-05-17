@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<odoo>
+    <report
+    id="report_pdf"
+    string="print_pdf"
+    model="shop.shop"
+    report_type="qweb-pdf"
+    name="book_pdf"
+    file="book_name.pdf"
+    />
+
+</odoo>
